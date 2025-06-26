@@ -1,3 +1,29 @@
+// Progress
+
+let scrollProgress = document.getElementById("progress");
+
+scrollProgress.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0; // Scroll to top
+});
+
+let calcScrollValue = () => {
+  let pos = document.documentElement.scrollTop;
+  let calcHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let scrollValue = Math.round((pos * 100) / calcHeight);
+
+  if (pos > 100) {
+    scrollProgress.style.display = "grid";
+  } else {
+    scrollProgress.style.display = "none";
+  }
+  scrollProgress.style.background = `conic-gradient(#AB2E56 ${scrollValue}%, #d9d9d9 ${scrollValue}%)`;
+};
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
+
 /* Feedback */
 
 const swiper = new Swiper(".swiper", {
