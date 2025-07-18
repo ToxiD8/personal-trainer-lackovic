@@ -169,6 +169,68 @@ function getFormErrors(name, email, message) {
   return errors;
 }
 
+// Scroll animation
+
+let nav_a = document.querySelectorAll("header nav a, .footerNav a");
+let navbarCollapse = document.querySelector(".navbar-collapse");
+
+nav_a.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    let id = this.getAttribute("href");
+
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+    }
+
+    if (id === "#logo") {
+      history.pushState(null, null, "#home");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    let target = document.querySelector(id);
+    if (!target) return;
+
+    history.pushState(null, null, id); // adds hash to URL
+
+    let scrollToSection =
+      target.getBoundingClientRect().top + window.pageYOffset - 70;
+    if (scrollToSection < 0) scrollToSection = 0;
+
+    window.scrollTo({
+      top: scrollToSection,
+      behavior: "smooth",
+    });
+  });
+});
+
+//  Pricing button scroll to Contact
+
+let pricingButton = document.querySelectorAll(".price_container .btn");
+
+pricingButton.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+    }
+
+    let contactId = document.getElementById("contact");
+    let scrollToContact =
+      contactId.getBoundingClientRect().top + window.pageYOffset - 70;
+
+    window.scrollTo({
+      top: scrollToContact,
+      behavior: "smooth",
+    });
+  });
+});
+
 /* Prevent Caret on Non-Inputs: */
 
 const bullets = document.querySelectorAll(".swiper-pagination");

@@ -59,7 +59,13 @@ body {
 
 /* Navigation Bar */
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -67,7 +73,7 @@ body {
   margin-left: auto;
 }
 
-.navbar>.container-fluid  {
+.navbar > .container-fluid {
   max-width: 90rem;
 }
 
@@ -165,6 +171,9 @@ body {
   box-sizing: border-box;
   padding: 0 5rem;
 }
+
+.about-right-text {
+  padding-bottom: 1rem;
 }
 
 .about-right-text p {
@@ -173,7 +182,7 @@ body {
 }
 
 .about-left img {
-  width: 100%;
+  width: 80%;
   max-width: 100%; /* Prevent it from overflowing */
   height: auto;
   display: block;
@@ -513,7 +522,7 @@ body {
 }
 
 .contact-left {
-  margin: 5rem 2rem;
+  margin: 0 2rem;
 }
 
 .contact-input-container {
@@ -546,12 +555,12 @@ body {
 
 form .contact-input-container .incorrect input,
 form .contact-input-container .incorrect textarea {
-  border-color: #d53b6c;
+  border-color: #ff0033;
   background-color: #ffd5d5;
 }
 
 form .contact-input-container p {
-  color: #d53b6c;
+  color: #ff0033;
   margin-top: 0.5rem;
 }
 
@@ -771,9 +780,6 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
   }
-  .contact-left {
-    margin: 2rem;
-  }
   .swiper-button-prev,
   .swiper-button-next {
     --swiper-navigation-sides-offset: 8%;
@@ -846,6 +852,10 @@ footer {
   .contact-right {
     display: none;
   }
+  .contact-details {
+    flex-direction: row;
+    gap: 3rem;
+  }
   .footerNav ul {
     flex-direction: column;
   }
@@ -868,8 +878,11 @@ footer {
   .about-left,
   .about-right {
     width: 100%;
-    max-width: 100%;
+    max-width: 80%;
     text-align: center;
+  }
+  .about-right-text {
+    padding: 0;
   }
   .about-right-text p {
     padding-bottom: 3rem;
@@ -877,6 +890,7 @@ footer {
   }
   .about-left img {
     max-width: 100%;
+    width: 100%;
   }
   .accordion {
     width: 80%;
@@ -903,7 +917,11 @@ footer {
     width: 90%;
   }
   .swiper-slide {
-    padding: 0 6rem;
+    padding: 0 4rem;
+  }
+  .contact-details {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
@@ -945,7 +963,7 @@ footer {
     text-align: center;
   }
   .contact-left {
-    margin: 2rem 1rem;
+    margin: 0 1rem;
   }
 }
 
