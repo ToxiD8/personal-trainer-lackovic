@@ -1,3 +1,11 @@
+/* Prevent Caret on Non-Inputs: */
+
+const bullets = document.querySelectorAll(".swiper-pagination");
+
+bullets.forEach((bullet) => {
+  bullet.addEventListener("mousedown", (e) => e.preventDefault()); // Prevent focus
+});
+
 // Progress
 
 let scrollProgress = document.getElementById("progress");
@@ -198,11 +206,11 @@ nav_a.forEach(function (link) {
     history.pushState(null, null, id); // adds hash to URL
 
     let scrollToSection =
-      target.getBoundingClientRect().top + window.pageYOffset - 70;
+      target.getBoundingClientRect().top + window.pageYOffset;
     if (scrollToSection < 0) scrollToSection = 0;
 
     window.scrollTo({
-      top: scrollToSection,
+      top: scrollToSection - 40,
       behavior: "smooth",
     });
   });
@@ -222,19 +230,28 @@ pricingButton.forEach((button) => {
 
     let contactId = document.getElementById("contact");
     let scrollToContact =
-      contactId.getBoundingClientRect().top + window.pageYOffset - 70;
+      contactId.getBoundingClientRect().top + window.pageYOffset;
 
     window.scrollTo({
-      top: scrollToContact,
+      top: scrollToContact - 40,
       behavior: "smooth",
     });
   });
 });
 
-/* Prevent Caret on Non-Inputs: */
+// Intersection Observer
 
-const bullets = document.querySelectorAll(".swiper-pagination");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
 
-bullets.forEach((bullet) => {
-  bullet.addEventListener("mousedown", (e) => e.preventDefault()); // Prevent focus
+const hiddenElements = document.querySelectorAll(".hidden-left, .hidden-right");
+hiddenElements.forEach((el) => {
+  observer.observe(el);
 });
