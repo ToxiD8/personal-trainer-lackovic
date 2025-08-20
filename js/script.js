@@ -52,11 +52,12 @@ if (scrollProgress) {
       scrollProgress.style.display = "none";
     }
     scrollProgress.style.background = `conic-gradient(#AB2E56 ${scrollValue}%, #d9d9d9 ${scrollValue}%)`;
-
-    scrollProgress.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
   }
+
+  scrollProgress.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   window.addEventListener("scroll", calcScrollValue);
   window.addEventListener("load", calcScrollValue);
 }
@@ -69,20 +70,26 @@ let navbarCollapse = document.querySelector(".navbar-collapse");
 nav_a.forEach(function (link) {
   link.addEventListener("click", function (e) {
     let id = this.getAttribute("href");
-    let target = document.querySelector(id);
 
+    if (id === "#logo") {
+      e.preventDefault();
+
+      if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+        new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+      }
+
+      history.pushState(null, null, "#home");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    let target = document.querySelector(id);
     if (!target) return;
 
     e.preventDefault();
 
     if (navbarCollapse && navbarCollapse.classList.contains("show")) {
       new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-    }
-
-    if (id === "#logo") {
-      history.pushState(null, null, "#home");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
     }
 
     history.pushState(null, null, id);
