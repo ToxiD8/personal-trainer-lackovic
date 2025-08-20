@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "name": "personal_trainer_lackovic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@prettier/plugin-php": "^0.24.0",
+    "linguist-languages": "^8.1.0",
+    "php-parser": "^3.2.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToxiD8/personal-trainer-lackovic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToxiD8/personal-trainer-lackovic/issues"
+  },
+  "homepage": "https://github.com/ToxiD8/personal-trainer-lackovic#readme",
+  "description": ""
+}

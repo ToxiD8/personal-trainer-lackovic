@@ -6,31 +6,156 @@ bullets.forEach((bullet) => {
   bullet.addEventListener("mousedown", (e) => e.preventDefault()); // Prevent focus
 });
 
+// Cookies
+
+const cookieBox = document.querySelector(".cookies_container");
+const cookie_buttons = document.querySelectorAll(".cookies_button");
+
+const executeCodes = () => {
+  if (!cookieBox) return;
+  if (document.cookie.includes("personal_trainer_lackovic")) return; // If cookies are already set, do not show the box
+
+  cookieBox.classList.add("cookies_show");
+
+  cookie_buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      cookieBox.classList.remove("cookies_show");
+
+      // if button has acceptBtn id
+      if (button.id === "acceptBtn") {
+        // set cookies for 1 month
+        document.cookie =
+          "cookieBy = personal_trainer_lackovic; max-age=" + 60 * 60 * 24 * 30;
+      }
+    });
+  });
+};
+
+// executeCodes function will be called when the page loads
+window.addEventListener("load", executeCodes);
+
 // Progress
 
 let scrollProgress = document.getElementById("progress");
 
-scrollProgress.addEventListener("click", () => {
-  document.documentElement.scrollTop = 0; // Scroll to top
+if (scrollProgress) {
+  function calcScrollValue() {
+    let pos = document.documentElement.scrollTop;
+    let calcHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+
+    if (pos > 100) {
+      scrollProgress.style.display = "grid";
+    } else {
+      scrollProgress.style.display = "none";
+    }
+    scrollProgress.style.background = `conic-gradient(#AB2E56 ${scrollValue}%, #d9d9d9 ${scrollValue}%)`;
+
+    scrollProgress.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+  window.addEventListener("scroll", calcScrollValue);
+  window.addEventListener("load", calcScrollValue);
+}
+
+// Scroll animation
+
+let nav_a = document.querySelectorAll("header nav a, .footerNav a");
+let navbarCollapse = document.querySelector(".navbar-collapse");
+
+nav_a.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    let id = this.getAttribute("href");
+    let target = document.querySelector(id);
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+    }
+
+    if (id === "#logo") {
+      history.pushState(null, null, "#home");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    history.pushState(null, null, id);
+
+    let scrollToSection =
+      target.getBoundingClientRect().top + window.pageYOffset;
+
+    if (scrollToSection < 0) scrollToSection = 0;
+
+    window.scrollTo({
+      top: scrollToSection - 40,
+      behavior: "smooth",
+    });
+  });
 });
 
-let calcScrollValue = () => {
-  let pos = document.documentElement.scrollTop;
-  let calcHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrollValue = Math.round((pos * 100) / calcHeight);
+//  Pricing button scroll to Contact
 
-  if (pos > 100) {
-    scrollProgress.style.display = "grid";
-  } else {
-    scrollProgress.style.display = "none";
+let pricingButton = document.querySelectorAll(".price_container .btn");
+
+pricingButton.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+    }
+
+    let contactId = document.getElementById("contact");
+    let scrollToContact =
+      contactId.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({
+      top: scrollToContact - 40,
+      behavior: "smooth",
+    });
+  });
+});
+
+// Scroll animation to the same position from cookies.php
+window.addEventListener("load", function () {
+  if (window.location.hash) {
+    let target = document.querySelector(window.location.hash);
+    if (target) {
+      let scrollToSection =
+        target.getBoundingClientRect().top + window.pageYOffset;
+
+      if (scrollToSection < 0) scrollToSection = 0;
+
+      window.scrollTo({
+        top: scrollToSection - 40, // same offset as click handler
+        behavior: "smooth",
+      });
+    }
   }
-  scrollProgress.style.background = `conic-gradient(#AB2E56 ${scrollValue}%, #d9d9d9 ${scrollValue}%)`;
-};
+});
 
-window.onscroll = calcScrollValue;
-window.onload = calcScrollValue;
+// Intersection Observer
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden-left, .hidden-right");
+hiddenElements.forEach((el) => {
+  observer.observe(el);
+});
 
 /* Feedback */
 
@@ -176,82 +301,3 @@ function getFormErrors(name, email, message) {
 
   return errors;
 }
-
-// Scroll animation
-
-let nav_a = document.querySelectorAll("header nav a, .footerNav a");
-let navbarCollapse = document.querySelector(".navbar-collapse");
-
-nav_a.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    let id = this.getAttribute("href");
-
-    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-    }
-
-    if (id === "#logo") {
-      history.pushState(null, null, "#home");
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-      return;
-    }
-
-    let target = document.querySelector(id);
-    if (!target) return;
-
-    history.pushState(null, null, id); // adds hash to URL
-
-    let scrollToSection =
-      target.getBoundingClientRect().top + window.pageYOffset;
-    if (scrollToSection < 0) scrollToSection = 0;
-
-    window.scrollTo({
-      top: scrollToSection - 40,
-      behavior: "smooth",
-    });
-  });
-});
-
-//  Pricing button scroll to Contact
-
-let pricingButton = document.querySelectorAll(".price_container .btn");
-
-pricingButton.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-    }
-
-    let contactId = document.getElementById("contact");
-    let scrollToContact =
-      contactId.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({
-      top: scrollToContact - 40,
-      behavior: "smooth",
-    });
-  });
-});
-
-// Intersection Observer
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
-
-const hiddenElements = document.querySelectorAll(".hidden-left, .hidden-right");
-hiddenElements.forEach((el) => {
-  observer.observe(el);
-});
