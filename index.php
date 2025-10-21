@@ -52,13 +52,10 @@
   <?php include 'header.php'; ?>
 
   <main id="main-content">
-    <section id=" intro">
-      <div class="intro_container">
-        <img src="img/intro/intro_img.png" alt="background" />
-        <div class="intro_text">
-          <h1 class="intro_text_primary">Simona Lackovičová</h1>
-          <h3 class="intro_text_secondary">Osobná trénerka</h3>
-        </div>
+    <section id="intro">
+      <div class="intro_text">
+        <h1 class="intro_text_primary">Simona Lackovičová</h1>
+        <h3 class="intro_text_secondary">Osobná trénerka</h3>
       </div>
     </section>
 
@@ -121,7 +118,7 @@
           <ul class="price_list">
             <li class="price_header">1 tréning</li>
             <li class="price">18<sup>€</sup><span>/h</span></li>
-            <li class="price_desc">Prvá konzultácia zadarmo</li>
+            <li class="price_desc">Prvá konzultácia a osobný screening v cene</li>
             <button class="btn">Objednať</button>
           </ul>
           <ul class="price_list">
@@ -130,7 +127,10 @@
             <li class="price">
               <sup class="discount_price">360€ </sup>288<sup>€</sup><span>/20h</span>
             </li>
-            <li class="price_desc">Prvá konzultácia zadarmo</li>
+            <li class="price_desc">Prvá konzultácia a osobný screening v cene</li>
+            <li class="price_desc">Transformačný plán na mieru</li>
+            <li class="price_desc">Týždenné kontroly</li>
+            <li class="price_desc">Podpora 24/7</li>
             <button class="btn">Objednať</button>
           </ul>
         </div>
