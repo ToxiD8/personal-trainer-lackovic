@@ -34,14 +34,14 @@ if (isset($_POST['submitContact'])) {
         $mail->isSMTP();
         $mail->SMTPAuth = true;
         $mail->Host = 'smtp.gmail.com';
-        $mail->Username = 'toxid8@gmail.com';
-        $mail->Password = 'lpciczmxgjflgzmw';
+        $mail->Username = '';
+        $mail->Password = '';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         //Recipients
-        $mail->setFrom('toxid8@gmail.com', 'Tomáš Hoffmann');
-        $mail->addAddress('toxid8@gmail.com', 'Tomáš Hoffmann');
+        $mail->setFrom('', '');
+        $mail->addAddress('', '');
         $mail->addReplyTo($email, $name);
 
         //Content
@@ -71,4 +71,3 @@ if (isset($_POST['submitContact'])) {
     echo json_encode(['error' => 'Invalid request']);
     exit;
 }
-
