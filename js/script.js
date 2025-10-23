@@ -2,8 +2,9 @@
 
 const bullets = document.querySelectorAll(".swiper-pagination");
 
+// prevent focus
 bullets.forEach((bullet) => {
-  bullet.addEventListener("mousedown", (e) => e.preventDefault()); // Prevent focus
+  bullet.addEventListener("mousedown", (e) => e.preventDefault());
 });
 
 // Cookies
@@ -13,7 +14,8 @@ const cookie_buttons = document.querySelectorAll(".cookies_button");
 
 const executeCodes = () => {
   if (!cookieBox) return;
-  if (document.cookie.includes("personal_trainer_lackovic")) return; // If cookies are already set, do not show the box
+  // if cookies are already set, do not show the box
+  if (document.cookie.includes("personal_trainer_lackovic")) return;
 
   cookieBox.classList.add("cookies_show");
 
@@ -130,6 +132,7 @@ pricingButton.forEach((button) => {
 });
 
 // Scroll animation to the same position from cookies.php
+
 window.addEventListener("load", function () {
   if (window.location.hash) {
     let target = document.querySelector(window.location.hash);
@@ -140,7 +143,7 @@ window.addEventListener("load", function () {
       if (scrollToSection < 0) scrollToSection = 0;
 
       window.scrollTo({
-        top: scrollToSection - 40, // same offset as click handler
+        top: scrollToSection - 40,
         behavior: "smooth",
       });
     }
@@ -203,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form || !name_input || !email_input || !message_input) return;
 
   // Clear error messages on input
+
   [name_input, email_input, message_input].forEach((input) => {
     input.addEventListener("input", () => {
       input.parentElement.classList.remove("incorrect");
@@ -213,9 +217,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // prevent reload
+    e.preventDefault();
 
-    // Validate
     const errors = getFormErrors(
       name_input.value,
       email_input.value,
@@ -236,9 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Submit form via fetch
     const formData = new FormData(form);
-    formData.append("submitContact", "1"); // important!
+    formData.append("submitContact", "1");
 
-    const scrollY = window.scrollY; // Save scroll position
+    const scrollY = window.scrollY;
 
     try {
       const res = await fetch("send-email.php", {
@@ -259,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
           confirmButtonColor: "#AB2E56",
         });
         form.reset();
-        window.scrollTo({ top: scrollY }); // Restore scroll
+        window.scrollTo({ top: scrollY });
       }
     } catch (err) {
       console.error(err);
@@ -277,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
           confirmButtonColor: "#AB2E56",
         });
       } catch (e) {
-        // If even fetching the session failed, fallback
+        // fallback in case of fetching the session failed
         Swal.fire({
           title: "Chyba",
           text: "Správu sa nepodarilo odoslať. Skúste to neskôr prosím.",

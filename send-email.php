@@ -17,7 +17,7 @@ if (isset($_POST['submitContact'])) {
 
     if (!$responseData["success"]) {
         $_SESSION['status'] = "CAPTCHA overenie zlyhalo. Skúste to prosím znova.";
-        http_response_code(400); // Bad request
+        http_response_code(400);
         exit;
     }
 
@@ -34,14 +34,14 @@ if (isset($_POST['submitContact'])) {
         $mail->isSMTP();
         $mail->SMTPAuth = true;
         $mail->Host = 'smtp.gmail.com';
-        $mail->Username = '';
-        $mail->Password = '';
+        $mail->Username = 'toxid8@gmail.com';
+        $mail->Password = 'lpciczmxgjflgzmw';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         //Recipients
-        $mail->setFrom('', '');
-        $mail->addAddress('', '');
+        $mail->setFrom('toxid8@gmail.com', 'Tomáš Hoffmann');
+        $mail->addAddress('toxid8@gmail.com', 'Tomáš Hoffmann');
         $mail->addReplyTo($email, $name);
 
         //Content
@@ -66,7 +66,7 @@ if (isset($_POST['submitContact'])) {
 
     exit;
 } else {
-    // If accessed without POST submit
+    // if accessed without POST submit
     http_response_code(400);
     echo json_encode(['error' => 'Invalid request']);
     exit;

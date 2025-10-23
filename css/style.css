@@ -244,12 +244,9 @@ body {
 
 /* Intersection observer */
 
-section {
-  /* display: grid;
-  place-items: center;
-  align-content: center; */
+/* section {
   min-height: 100dvh;
-}
+} */
 
 .hidden-left {
   opacity: 0;
@@ -291,6 +288,7 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(40%);
+  height: 100vh;
 }
 
 /* .intro_container {
@@ -322,6 +320,7 @@ section {
   background-color: #111;
   padding-top: 9rem;
   position: relative;
+  height: 100vh;
 }
 
 #about h2 {
@@ -560,7 +559,6 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0.5rem 0; */
 }
 
 .extra .price_header {
@@ -1019,10 +1017,6 @@ footer {
 }
 
 @media (max-width: 1029px) {
-  /* #intro {
-    background-size: cover;
-    background-position: left top;
-  } */
   .standard,
   .delux,
   .extra {
@@ -1105,6 +1099,7 @@ footer {
 @media (max-width: 676px) {
   #about {
     padding-top: 7rem;
+    height: 100%;
   }
   .about-container {
     flex-direction: column-reverse;
