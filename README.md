@@ -6,7 +6,7 @@ A presentation website for a fitness trainer. The site provides visitors with al
 
 ## Technologies
 
-- HTML / CSS / JavaScript
+- HTML, CSS, JavaScript
 - React.js, Bootstrap, Node.js
 
 ## Running the project
