@@ -1,0 +1,28 @@
+{
+  "feedbacks": [
+    {
+      "id": "1",
+      "name": "Peter Facenna",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu nt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptat",
+      "image": "/assets/images/feedback/feedback_1.webp"
+    },
+    {
+      "id": "2",
+      "name": "Aileen Johnstone",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu nt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptat",
+      "image": "/assets/images/feedback/feedback_2.webp"
+    },
+    {
+      "id": "3",
+      "name": "Raymond Karpinski",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu nt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptat",
+      "image": "/assets/images/feedback/feedback_3.webp"
+    },
+    {
+      "id": "4",
+      "name": "Gregory Cooper",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu nt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptat",
+      "image": "/assets/images/feedback/feedback_4.webp"
+    }
+  ]
+}
