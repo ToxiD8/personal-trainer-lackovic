@@ -1,21 +1,19 @@
-# Simona Lackovičová – osobná trénerka
+# Simona Lackovičová – Personal Trainer
 
-Prezentačná webová stránka pre fitness trénerku. Stránka návštevníkom poskytuje
-všetky potrebné informácie – od bio trénerky, cez cenník služieb a poradenstva,
-recenzie klientov a FAQ sekciu, až po kontaktný formulár s priamym kontaktom na trénerku.
+A presentation website for a fitness trainer. The site provides visitors with all the necessary information – from the trainer's bio, service and coaching pricing, client reviews and FAQ section, to a contact form with direct contact details.
 
-> Projekt je momentálne vo fáze vývoja.
+> Project is currently under development. All assets such as images and text content are used for testing purposes only.
 
-## Technológie
+## Technologies
 
-- HTML / CSS / Javascript
+- HTML / CSS / JavaScript
 - React.js, Bootstrap, Node.js
 
-## Spustenie projektu
+## Running the project
 
 - npm install
 - npm run dev
 
-## Kontakt
+## Contact
 
 Tomáš Hoffmann - [LinkedIn](https://www.linkedin.com/in/tom%C3%A1%C5%A1-hoffmann-354148133/)
