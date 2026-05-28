@@ -1,11 +1,11 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { scrollToSection } from "../utils/scrollToSection";
 import logo from "/assets/images/logo/logo.png";
 
-const navColored = "linear-gradient(90deg, #000, var(--innuendo))";
-const navTransparent =
-  "linear-gradient(to bottom, rgb(0 0 0 / 70%) 10%, transparent 75%)";
+const navColored = "rgba(0, 0, 0, 0.8)";
+const navBlur = "blur(12px)";
 
 const NavBar = () => {
   const [togglerExpanded, setTogglerExpanded] = useState(false);
@@ -14,20 +14,29 @@ const NavBar = () => {
   const navbarRef = useRef(null);
   const prevScrollY = useRef(0);
 
+  // sets navbar background on page load and when toggler is expanded
   useEffect(() => {
     const navbarBg = navbarRef.current;
 
     if (togglerExpanded) {
       navbarBg.style.background = navColored;
+      navbarBg.style.backdropFilter = navBlur;
     } else {
-      navbarBg.style.background = navTransparent;
-    }
-
-    if (location.pathname === "/cookies") {
-      navbarBg.style.background = navColored;
+      const timeout = setTimeout(() => {
+        const scrollY = window.scrollY;
+        if (location.pathname === "/cookies") {
+          navbarBg.style.background = navColored;
+          navbarBg.style.backdropFilter = navBlur;
+        } else {
+          navbarBg.style.background = scrollY > 1 ? navColored : null;
+          navbarBg.style.backdropFilter = scrollY > 1 ? navBlur : null;
+        }
+      }, 350);
+      return () => clearTimeout(timeout);
     }
   }, [togglerExpanded, location]);
 
+  // shows/hides navbar on scroll
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;
@@ -43,8 +52,10 @@ const NavBar = () => {
           scrollY > 1
             ? navColored
             : location.pathname === "/"
-              ? navTransparent
+              ? null
               : navColored;
+        navbarBg.style.backdropFilter =
+          scrollY > 1 ? navBlur : location.pathname === "/" ? null : navBlur;
       }
       prevScrollY.current = scrollY;
     };
@@ -56,6 +67,22 @@ const NavBar = () => {
     };
   }, [location, togglerExpanded]);
 
+  // close mobile navbar when clicking outside
+  useEffect(() => {
+    if (!togglerExpanded) return;
+
+    const handleClickOutside = (e) => {
+      if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+        setTogglerExpanded(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [togglerExpanded]);
+
+  // scrolls to section on nav link click
+  // logo
   const handleLogoClick = (e, sectionId) => {
     e.preventDefault();
     if (location.pathname === "/") {
@@ -66,12 +93,11 @@ const NavBar = () => {
     setTogglerExpanded(false);
   };
 
+  // nav links
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     if (location.pathname === "/") {
-      document
-        .getElementById(sectionId)
-        ?.scrollIntoView({ behavior: "smooth" });
+      scrollToSection(sectionId);
     } else {
       navigate("/", { state: { scrollTo: sectionId } });
     }
@@ -79,7 +105,13 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar expanded={togglerExpanded} expand="lg" fixed="top" ref={navbarRef}>
+    <Navbar
+      expanded={togglerExpanded}
+      expand="lg"
+      fixed="top"
+      ref={navbarRef}
+      className={togglerExpanded ? "menu-open" : ""}
+    >
       <Container fluid>
         <Navbar.Brand onClick={(e) => handleLogoClick(e, "hero")}>
           <img src={logo} alt="logo" className="logo" />

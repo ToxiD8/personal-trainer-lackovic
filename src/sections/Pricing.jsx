@@ -71,7 +71,8 @@ const Pricing = ({ scrollToContact }) => {
                     kontroly
                   </li>
                   <li>
-                    <FaCheckCircle className="features-icon" /> Podpora 24/7
+                    <FaCheckCircle className="features-icon" /> Podpora Online
+                    Coaching 24/7
                   </li>
                 </ul>
               </div>
@@ -140,7 +141,8 @@ const Pricing = ({ scrollToContact }) => {
                     kontroly
                   </li>
                   <li>
-                    <FaCheckCircle className="features-icon" /> Podpora 24/7
+                    <FaCheckCircle className="features-icon" /> Podpora Online
+                    Coaching 24/7
                   </li>
                 </ul>
               </div>

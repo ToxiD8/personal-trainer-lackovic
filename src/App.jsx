@@ -15,25 +15,14 @@ import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 
 const MainPage = () => {
+  // scrolls smoothly to contact section from Hero and Pricing
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      const top = contactSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
-
-  // scrolls smoothly to section from CookiesPage
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.state?.scrollTo) {
-      setTimeout(() => {
-        document
-          .getElementById(location.state.scrollTo)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }, 300);
-    }
-  }, [location]);
 
   // Intersection Observer
   useEffect(() => {

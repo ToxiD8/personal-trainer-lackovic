@@ -1,11 +1,12 @@
 import aboutImg from "/assets/images/about/about_img.png";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaThreads } from "react-icons/fa6";
 
 const About = () => {
   return (
     <>
       <section id="about">
+        <div className="about-overlay" />
         <div className="about-container">
           <div className="about-left animate-bottom" data-delay="200">
             <h1>O mne</h1>
@@ -36,7 +37,14 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillInstagram className="social-icon" />
+                <FaInstagram className="social-icon" />
+              </a>
+              <a
+                href="https://www.threads.com/@s.lackovic"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaThreads className="social-icon" />
               </a>
             </div>
           </div>

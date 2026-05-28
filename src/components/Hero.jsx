@@ -28,7 +28,6 @@ const Hero = ({ scrollToContact }) => {
     <section id="hero">
       <div className="hero-bg" ref={bgRef} />
       <div className="hero-overlay" />
-
       <div className="hero-content">
         <div className="hero-eyebrow">Simona Lackovičová Fitness Coaching</div>
         <h1 className="hero-title">
