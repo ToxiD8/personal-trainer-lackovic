@@ -4,7 +4,7 @@
 :root {
   --innuendo: #ab2e56;
   --lightgray: #e5e5e5;
-  --bg-pattern: url("assets/images/bg-pattern.svg");
+  --bg-pattern: url("/assets/images/bg-pattern.svg");
 }
 
 #about,
@@ -356,7 +356,7 @@ section {
   inset: -5%;
   width: 110%;
   height: 110%;
-  background-image: url("assets/images/hero/hero_background_extended_mirrored.webp");
+  background-image: url("/assets/images/hero/hero_background_extended_mirrored.webp");
   background-size: cover;
   background-position: center 40%;
   will-change: transform;
@@ -705,7 +705,7 @@ section {
 .pricing-container .pricing-grid .pricing-right {
   transform: scale(1.2);
   /* background: linear-gradient(90deg, #111, var(--innuendo)); */
-  background: url(assets/images/pricing/slanted-gradient.svg) no-repeat center;
+  background: url(/assets/images/pricing/slanted-gradient.svg) no-repeat center;
   background-size: cover;
 }
 
