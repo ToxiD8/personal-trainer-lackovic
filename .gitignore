@@ -24,6 +24,4 @@ dist.zip
 *.sln
 *.sw?
 drafts
-.env
-.env.*.local
 backend/
