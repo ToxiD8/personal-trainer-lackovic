@@ -1,4 +1,4 @@
-import aboutImg from "/assets/images/about/about_img.png";
+import aboutImg from "/assets/images/about/about_img.webp";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 

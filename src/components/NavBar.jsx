@@ -1,8 +1,10 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { scrollToSection } from "../utils/scrollToSection";
-import logo from "/assets/images/logo/logo.png";
+import logo from "/assets/images/logo/logo.webp";
 
 const navColored = "rgba(0, 0, 0, 0.8)";
 const navBlur = "blur(12px)";
@@ -114,7 +116,7 @@ const NavBar = () => {
     >
       <Container fluid>
         <Navbar.Brand onClick={(e) => handleLogoClick(e, "hero")}>
-          <img src={logo} alt="logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" />
         </Navbar.Brand>
 
         <Navbar.Toggle

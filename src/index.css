@@ -1,10 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/bebas-neue-v16-latin_latin-ext-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/kanit-v17-latin_latin-ext-300.woff2") format("woff2");
+}
 
 :root {
   --innuendo: #ab2e56;
   --lightgray: #e5e5e5;
   --bg-pattern: url("/assets/images/bg-pattern.svg");
+}
+
+body {
+  font-family: "Kanit", sans-serif;
 }
 
 #about,
@@ -46,12 +64,6 @@ ul {
 *:focus-visible {
   outline: none !important;
   box-shadow: 0 0 0 3px var(--innuendo) !important;
-}
-
-/* Sections */
-
-section {
-  scroll-margin-top: 95px;
 }
 
 #pricing h1,
@@ -238,11 +250,7 @@ section {
   transform: scale(0.92);
 }
 
-/* Navigation Bar */
-
-.navbar > .container-fluid {
-  max-width: 90rem;
-}
+/* Navbar */
 
 .navbar,
 .navbar-expand-lg {
@@ -258,6 +266,11 @@ section {
     background 0.3s ease;
 }
 
+.navbar > .container-fluid {
+  max-width: 87.5rem;
+  padding-left: 0;
+}
+
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -271,7 +284,7 @@ section {
 }
 
 .navbar-brand {
-  padding: 0.5rem 1rem;
+  padding-left: 5rem;
 }
 
 .navbar-brand .logo {
@@ -356,7 +369,7 @@ section {
   inset: -5%;
   width: 110%;
   height: 110%;
-  background-image: url("/assets/images/hero/hero_background_extended_mirrored.webp");
+  background-image: url("/assets/images/hero/hero_bg.webp");
   background-size: cover;
   background-position: center 40%;
   will-change: transform;
@@ -403,6 +416,7 @@ section {
 .hero-title {
   font-family: "Bebas Neue", sans-serif;
   font-size: 100px;
+  font-weight: 500;
   line-height: 1;
   color: #fff;
   margin: 0 0 6px;
@@ -542,6 +556,8 @@ section {
 }
 
 .about-left-socials a {
+  width: 41px;
+  height: 41px;
   text-decoration: none;
   padding: 7px;
   background-color: #fff;
@@ -1066,7 +1082,7 @@ section {
 
 #contact {
   padding: 7rem 0 3rem;
-  background-color: #000;
+  background-color: #04070c;
   overflow-x: hidden;
 }
 
@@ -1254,6 +1270,8 @@ form .contact-input-container .incorrect textarea {
 }
 
 .contact-details-content .socials a {
+  width: 36px;
+  height: 36px;
   text-decoration: none;
   padding: 6px;
   background-color: #fff;
@@ -1337,7 +1355,7 @@ form .contact-input-container .incorrect textarea {
 }
 
 .footer-logo .logo {
-  max-width: 6rem;
+  max-width: 5rem;
   margin-bottom: 15px;
 }
 
@@ -1475,6 +1493,9 @@ form .contact-input-container .incorrect textarea {
 }
 
 @media (max-width: 955px) {
+  .navbar-brand {
+    padding-inline: clamp(0.5rem, 5vw, 2rem);
+  }
   .hero-content {
     padding: 0 clamp(0.5rem, 5vw, 2rem) 3rem;
   }
@@ -1541,6 +1562,9 @@ form .contact-input-container .incorrect textarea {
 }
 
 @media (max-width: 767px) {
+  .hero-bg {
+    background-image: url("/assets/images/hero/hero_bg_mobile.webp");
+  }
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
@@ -1665,11 +1689,5 @@ form .contact-input-container .incorrect textarea {
   }
   .hero-content {
     bottom: 60px;
-  }
-}
-
-@media (max-width: 245px) {
-  .navbar-brand {
-    padding: 0.5rem 0;
   }
 }

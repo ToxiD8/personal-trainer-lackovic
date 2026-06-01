@@ -4,7 +4,7 @@ import { FaThreads, FaLocationDot } from "react-icons/fa6";
 import { MdPlayArrow } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { scrollToSection } from "../utils/scrollToSection";
-import logo from "/assets/images/logo/logo.png";
+import logo from "/assets/images/logo/logo.webp";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="footer-widget">
             <div className="footer-logo">
               <Link onClick={() => window.scrollTo(0, 0)}>
-                <img src={logo} alt="logo" className="logo" />
+                <img src={logo} alt="Logo" className="logo" />
               </Link>
             </div>
             <p>
