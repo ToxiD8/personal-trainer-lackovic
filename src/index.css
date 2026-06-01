@@ -954,6 +954,7 @@ ul {
 
 .swiper-slide img {
   width: min(160px, 90%);
+  height: auto;
   border-radius: 50%;
 }
 
@@ -1245,7 +1246,7 @@ form .contact-input-container .incorrect textarea {
   border-radius: 50%;
 }
 
-.contact-details-content h4 {
+.contact-details-content h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0.5rem;

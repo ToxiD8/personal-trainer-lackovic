@@ -1,4 +1,5 @@
 import aboutImg from "/assets/images/about/about_img.webp";
+import aboutImgMobile from "/assets/images/about/about_img_mobile.webp";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 
@@ -28,6 +29,7 @@ const About = () => {
                 href="https://www.facebook.com/profile.php?id=100004710452990"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaFacebook className="social-icon" />
               </a>
@@ -36,6 +38,7 @@ const About = () => {
                 href="https://www.instagram.com/s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <FaInstagram className="social-icon" />
               </a>
@@ -43,13 +46,21 @@ const About = () => {
                 href="https://www.threads.com/@s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Threads"
               >
                 <FaThreads className="social-icon" />
               </a>
             </div>
           </div>
           <div className="about-right">
-            <img src={aboutImg} alt="About" />
+            <img
+              src={aboutImg}
+              width="600"
+              height="790"
+              srcSet={`${aboutImgMobile} 400w, ${aboutImg} 600w`}
+              sizes="(max-width: 768px) 400px, 550px"
+              alt="About"
+            />
           </div>
         </div>
       </section>

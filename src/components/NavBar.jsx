@@ -116,7 +116,13 @@ const NavBar = () => {
     >
       <Container fluid>
         <Navbar.Brand onClick={(e) => handleLogoClick(e, "hero")}>
-          <img src={logo} alt="Logo" className="logo" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo"
+            width="213"
+            height="200"
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle

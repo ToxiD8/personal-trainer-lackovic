@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { useEffect } from "react";
 
@@ -47,7 +47,7 @@ const MainPage = () => {
     const localObservers = [];
 
     const extraItems = document.querySelectorAll(".animate-bottom");
-    extraItems.forEach((el, index) => {
+    extraItems.forEach((el) => {
       const localObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {

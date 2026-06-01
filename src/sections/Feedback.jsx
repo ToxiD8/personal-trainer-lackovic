@@ -30,7 +30,12 @@ const Feedback = () => {
               {feedbacks.map((feedback) => (
                 <SwiperSlide key={feedback.id}>
                   <div className="feedback-item">
-                    <img src={feedback.image} alt={feedback.name} />
+                    <img
+                      src={feedback.image}
+                      alt={feedback.name}
+                      width="160"
+                      height="160"
+                    />
                     <q>{feedback.text}</q>
                     <h2>{feedback.name}</h2>
                   </div>
