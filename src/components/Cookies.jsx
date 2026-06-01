@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Cookies = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => {
+    return !document.cookie.includes("cookiesAccepted=true");
+  });
   const [isAnimating, setIsAnimating] = useState(false);
 
   // scrolls smoothly to section from navbar links
@@ -25,7 +27,6 @@ const Cookies = () => {
     const cookiesExist = document.cookie.includes("cookiesAccepted=true");
 
     if (!cookiesExist) {
-      setIsVisible(true);
       setTimeout(() => {
         setIsAnimating(true);
       }, 300);
@@ -50,6 +51,7 @@ const Cookies = () => {
       {isVisible && (
         <div
           className={`cookies_container ${isAnimating ? "cookies_show" : ""}`}
+          aria-hidden="true"
         >
           <div className="cookies_window">
             <FaCookieBite />

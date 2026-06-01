@@ -17,7 +17,6 @@ const Footer = () => {
     } else {
       navigate("/", { state: { scrollTo: sectionId } });
     }
-    setTogglerExpanded(false);
   };
 
   return (
@@ -42,6 +41,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=100004710452990"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaFacebook className="social-icon" />
               </a>
@@ -49,6 +49,7 @@ const Footer = () => {
                 href="https://www.instagram.com/s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaInstagram className="social-icon" />
               </a>
@@ -56,13 +57,14 @@ const Footer = () => {
                 href="https://www.threads.com/@s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaThreads className="social-icon" />
               </a>
             </div>
           </div>
           <div className="footer-widget">
-            <h5>Menu</h5>
+            <h1>Menu</h1>
             <div className="footer-nav">
               <ul>
                 <li>
@@ -97,7 +99,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-widget">
-            <h5>Kontakt</h5>
+            <h1>Kontakt</h1>
             <div className="footer-contact">
               <div className="footer-contact-item">
                 <div className="footer-contact-icon">
