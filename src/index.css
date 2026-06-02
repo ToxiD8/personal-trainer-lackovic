@@ -373,6 +373,7 @@ ul {
   background-size: cover;
   background-position: center 40%;
   will-change: transform;
+  transform: scale(1.08);
 }
 
 .hero-overlay {
@@ -423,8 +424,8 @@ ul {
   letter-spacing: 0.015em;
   display: flex;
   flex-direction: column;
-  animation: fadeUp 0.9s ease both;
-  animation-delay: 0.35s;
+  /* animation: fadeUp 0.9s ease both;
+  animation-delay: 0.35s; */
 }
 
 .hero-title-line {
@@ -1358,6 +1359,7 @@ form .contact-input-container .incorrect textarea {
 .footer-logo .logo {
   max-width: 5rem;
   margin-bottom: 15px;
+  height: auto;
 }
 
 .footer-socials {

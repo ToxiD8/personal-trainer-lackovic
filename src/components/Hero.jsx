@@ -7,15 +7,33 @@ const Hero = ({ scrollToContact }) => {
     const bg = bgRef.current;
     const hero = bg.parentElement;
 
-    bg.style.transform = `translateY(0px) scale(1.08)`;
+    // bg.style.transform = `translateY(0px) scale(1.08)`;
 
-    const onScroll = () => {
+    let ticking = false;
+
+    const updateParallax = () => {
       const scrollY = window.scrollY;
 
-      if (scrollY > hero.offsetHeight) return;
-
-      bg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.08)`;
+      if (scrollY <= hero.offsetHeight) {
+        bg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.08)`;
+      }
+      ticking = false;
     };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+
+    // const onScroll = () => {
+    //   const scrollY = window.scrollY;
+
+    //   if (scrollY > hero.offsetHeight) return;
+
+    //   bg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.08)`;
+    // };
 
     window.addEventListener("scroll", onScroll, { passive: true });
 
