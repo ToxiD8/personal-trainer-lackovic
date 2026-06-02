@@ -26,7 +26,9 @@ const Footer = () => {
         <div className="footer-row">
           <div className="footer-widget">
             <div className="footer-logo">
-              <Link onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <img
                   src={logo}
                   alt="Logo"

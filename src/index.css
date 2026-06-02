@@ -34,14 +34,13 @@ body {
   background-attachment: fixed;
 }
 
-/* .parallax-bg {
-  position: fixed;
-  inset: -10%;
-  background-image: var(--bg-pattern);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-} */
+a,
+button,
+.navbar-brand,
+.swiper-button-prev,
+.swiper-button-next {
+  -webkit-tap-highlight-color: transparent;
+}
 
 h1,
 h2,
