@@ -120,8 +120,8 @@ const NavBar = () => {
             src={logo}
             alt="Logo"
             className="logo"
-            width="213"
-            height="200"
+            width="107"
+            height="100"
           />
         </Navbar.Brand>
 

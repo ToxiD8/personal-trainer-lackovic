@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Cookies = () => {
-  const [isVisible, setIsVisible] = useState(() => {
-    return !document.cookie.includes("cookiesAccepted=true");
-  });
+  const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // scrolls smoothly to section from navbar links
@@ -23,18 +21,26 @@ const Cookies = () => {
     }
   }, [location]);
 
+  // show/hide banner
   useEffect(() => {
     const cookiesExist = document.cookie.includes("cookiesAccepted=true");
 
     if (!cookiesExist) {
-      setTimeout(() => {
-        setIsAnimating(true);
-      }, 300);
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+
+        requestAnimationFrame(() => {
+          setIsAnimating(true);
+        });
+      }, 1500);
+
+      return () => clearTimeout(timer);
     }
   }, []);
 
-  const handleDecline = () => {
+  const closeBanner = () => {
     setIsAnimating(false);
+
     setTimeout(() => {
       setIsVisible(false);
     }, 500);
@@ -43,7 +49,11 @@ const Cookies = () => {
   const handleAccept = () => {
     document.cookie =
       "cookiesAccepted=true; max-age=2592000; path=/; SameSite=Lax; Secure";
-    setIsVisible(false);
+    closeBanner();
+  };
+
+  const handleDecline = () => {
+    closeBanner();
   };
 
   return (
@@ -51,7 +61,6 @@ const Cookies = () => {
       {isVisible && (
         <div
           className={`cookies_container ${isAnimating ? "cookies_show" : ""}`}
-          aria-hidden="true"
         >
           <div className="cookies_window">
             <FaCookieBite />

@@ -27,7 +27,13 @@ const Footer = () => {
           <div className="footer-widget">
             <div className="footer-logo">
               <Link onClick={() => window.scrollTo(0, 0)}>
-                <img src={logo} alt="Logo" className="logo" />
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="logo"
+                  width="107"
+                  height="100"
+                />
               </Link>
             </div>
             <p>
@@ -106,7 +112,7 @@ const Footer = () => {
                   <FaLocationDot />
                 </div>
                 <div className="footer-contact-content">
-                  <h6>Adresa</h6>
+                  <h2>Adresa</h2>
                   <p>Fabrika Gym</p>
                   <p>Nitrianská 70</p>
                   <p>958 01 Partizánske</p>
@@ -117,7 +123,7 @@ const Footer = () => {
                   <FaPhoneAlt />
                 </div>
                 <div className="footer-contact-content">
-                  <h6>Telefón</h6>
+                  <h2>Telefón</h2>
                   <p>(+421) 908 809 710</p>
                 </div>
               </div>
@@ -126,7 +132,7 @@ const Footer = () => {
                   <FaAt />
                 </div>
                 <div className="footer-contact-content">
-                  <h6>E-mail</h6>
+                  <h2>E-mail</h2>
                   <p>lackovicovasimon@gmail.com</p>
                 </div>
               </div>
