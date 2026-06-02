@@ -43,7 +43,7 @@ const Hero = ({ scrollToContact }) => {
           <img
             ref={bgRef}
             src="/assets/images/hero/hero_bg.webp"
-            alt=""
+            alt="Hero"
             fetchPriority="high"
             decoding="async"
             className="hero-bg-image"
