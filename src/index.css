@@ -34,14 +34,6 @@ body {
   background-attachment: fixed;
 }
 
-a,
-button,
-.navbar-brand,
-.swiper-button-prev,
-.swiper-button-next {
-  -webkit-tap-highlight-color: transparent;
-}
-
 h1,
 h2,
 h3,
@@ -57,6 +49,7 @@ ul {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   /* outline: 1px solid red; */
 }
 
