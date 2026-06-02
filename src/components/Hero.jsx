@@ -5,9 +5,7 @@ const Hero = ({ scrollToContact }) => {
 
   useEffect(() => {
     const bg = bgRef.current;
-    const hero = bg.parentElement;
-
-    // bg.style.transform = `translateY(0px) scale(1.08)`;
+    const hero = document.getElementById("hero");
 
     let ticking = false;
 
@@ -27,14 +25,6 @@ const Hero = ({ scrollToContact }) => {
       }
     };
 
-    // const onScroll = () => {
-    //   const scrollY = window.scrollY;
-
-    //   if (scrollY > hero.offsetHeight) return;
-
-    //   bg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.08)`;
-    // };
-
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
@@ -44,7 +34,22 @@ const Hero = ({ scrollToContact }) => {
 
   return (
     <section id="hero">
-      <div className="hero-bg" ref={bgRef} />
+      <div className="hero-bg">
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/images/hero/hero_bg_mobile.webp"
+          />
+          <img
+            ref={bgRef}
+            src="/assets/images/hero/hero_bg.webp"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="hero-bg-image"
+          />
+        </picture>
+      </div>
       <div className="hero-overlay" />
       <div className="hero-content">
         <div className="hero-eyebrow">Simona Lackovičová Fitness Coaching</div>
