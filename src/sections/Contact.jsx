@@ -44,8 +44,6 @@ const Contact = () => {
 
     const interval = setInterval(() => {
       if (window.turnstile) {
-        console.log(import.meta.env.VITE_TURNSTILE_SITE_KEY);
-        console.log(typeof import.meta.env.VITE_TURNSTILE_SITE_KEY);
         tryRender();
         clearInterval(interval);
       }
