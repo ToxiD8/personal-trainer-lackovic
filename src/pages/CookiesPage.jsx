@@ -16,22 +16,63 @@ const CookiesPage = () => {
           <h2>Ako pracujeme so súbormi cookie?</h2>
           <p>
             Na zaistenie bezproblémového chodu našej webovej stránky niekedy
-            používame malé dátové súbory nazývané cookies. Toto je bežný spôsob,
-            aký využívajú mnohé moderné weby.
+            používame malé dátové súbory nazývané cookies. Používame ich výlučne
+            na základné fungovanie stránky a analýzu návštevnosti.
           </p>
+
           <h2>Čo vlastne cookies sú?</h2>
           <p>
             Cookies je malý textový súbor, ktorý sa uloží do vášho zariadenia
-            počas prehliadania webu. Tieto súbory umožňujú stránke zapamätať si
-            vaše nastavenia, ako napríklad preferovaný jazyk alebo veľkosť
-            písma, aby ste ich nemuseli opakovane nastavovať.
+            počas prehliadania webu. Umožňuje stránke zapamätať si určité
+            informácie medzi návštevami.
           </p>
-          <h2>Ako a prečo ich využívame?</h2>
-          <p>
-            Naša stránka používa cookies na uchovanie vašich nastavení,
-            prispôsobenie obsahu a reklám podľa vašich preferencií a na
-            zabezpečenie funkčnosti stránok.
-          </p>
+
+          <h2>Aké cookies používame?</h2>
+          <table className="cookies-table">
+            <thead>
+              <tr>
+                <th>Názov</th>
+                <th>Účel</th>
+                <th>Typ</th>
+                <th>Platnosť</th>
+                <th>Vydavateľ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Názov">
+                  <code>cookiesAccepted</code>
+                </td>
+                <td data-label="Účel">Uloženie vášho súhlasu s cookies</td>
+                <td data-label="Typ">Nevyhnutná</td>
+                <td data-label="Platnosť">30 dní</td>
+                <td data-label="Vydavateľ">Táto stránka</td>
+              </tr>
+              <tr>
+                <td data-label="Názov">
+                  <code>_ga</code>
+                </td>
+                <td data-label="Účel">
+                  Rozlíšenie návštevníkov (Google Analytics)
+                </td>
+                <td data-label="Typ">Analytická</td>
+                <td data-label="Platnosť">2 roky</td>
+                <td data-label="Vydavateľ">Google</td>
+              </tr>
+              <tr>
+                <td data-label="Názov">
+                  <code>_ga_*</code>
+                </td>
+                <td data-label="Účel">
+                  Udržanie stavu relácie (Google Analytics)
+                </td>
+                <td data-label="Typ">Analytická</td>
+                <td data-label="Platnosť">2 roky</td>
+                <td data-label="Vydavateľ">Google</td>
+              </tr>
+            </tbody>
+          </table>
+
           <h2>Správa súborov cookies</h2>
           <p>
             Cookies môžete spravovať alebo odstrániť podľa svojich potrieb.
@@ -43,16 +84,17 @@ const CookiesPage = () => {
             >
               aboutcookies.org
             </a>
-            . Môžete ich vymazať zo svojho zariadenia a prehliadač nastaviť tak,
-            aby ich ukladanie blokoval. Upozorňujeme však, že niektoré funkcie
-            stránok môžu bez cookies fungovať obmedzene.
+            . Upozorňujeme však, že niektoré funkcie stránok môžu bez cookies
+            fungovať obmedzene.
           </p>
-          <h2>Ako vypnúť cookies?</h2>
+
+          <h2>Odvolanie súhlasu</h2>
           <p>
-            Používanie cookies môžete regulovať v nastaveniach vášho
-            prehliadača. Väčšina prehliadačov ich predvolene povolí, no vy ich
-            môžete kedykoľvek deaktivovať.
+            Svoj súhlas môžete kedykoľvek odvolať vymazaním cookies vo vašom
+            prehliadači. Pri ďalšej návšteve sa banner znovu zobrazí a môžete
+            zvoliť znova.
           </p>
+
           <button onClick={goHome}>Späť na hlavnú stránku</button>
         </div>
       </div>

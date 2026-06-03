@@ -1,41 +1,66 @@
 import { FaCookieBite } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const GA_ID = "G-RHSJVQ329G";
+
+const loadGoogleAnalytics = () => {
+  if (document.getElementById("ga-script")) return;
+
+  const script1 = document.createElement("script");
+  script1.id = "ga-script";
+  script1.async = true;
+  script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script1);
+
+  const script2 = document.createElement("script");
+  script2.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_ID}');
+  `;
+  document.head.appendChild(script2);
+};
 
 const Cookies = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // scrolls smoothly to section from navbar links
-  const location = useLocation();
+  // const location = useLocation();
 
+  // useEffect(() => {
+  //   if (location.state?.scrollTo) {
+  //     setTimeout(() => {
+  //       const section = document.getElementById(location.state.scrollTo);
+  //       if (section) {
+  //         const top = section.getBoundingClientRect().top + window.scrollY;
+  //         window.scrollTo({ top, behavior: "smooth" });
+  //       }
+  //     }, 300);
+  //   }
+  // }, [location]);
+
+  // parsing cookie
   useEffect(() => {
-    if (location.state?.scrollTo) {
-      setTimeout(() => {
-        const section = document.getElementById(location.state.scrollTo);
-        if (section) {
-          const top = section.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top, behavior: "smooth" });
-        }
-      }, 300);
-    }
-  }, [location]);
+    const cookieValue = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("cookiesAccepted="))
+      ?.split("=")[1];
 
-  // show/hide banner
-  useEffect(() => {
-    const cookiesExist = document.cookie.includes("cookiesAccepted=true");
+    if (cookieValue === "true") loadGoogleAnalytics();
 
-    if (!cookiesExist) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
+    if (cookieValue !== undefined) return;
 
-        requestAnimationFrame(() => {
-          setIsAnimating(true);
-        });
-      }, 1500);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      requestAnimationFrame(() => {
+        setIsAnimating(true);
+      });
+    }, 1500);
 
-      return () => clearTimeout(timer);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const closeBanner = () => {
@@ -49,10 +74,13 @@ const Cookies = () => {
   const handleAccept = () => {
     document.cookie =
       "cookiesAccepted=true; max-age=2592000; path=/; SameSite=Lax; Secure";
+    loadGoogleAnalytics();
     closeBanner();
   };
 
   const handleDecline = () => {
+    document.cookie =
+      "cookiesAccepted=false; max-age=2592000; path=/; SameSite=Lax; Secure";
     closeBanner();
   };
 

@@ -201,6 +201,29 @@ ul {
   cursor: pointer;
 }
 
+.cookies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 15px;
+}
+
+.cookies-table th,
+.cookies-table td {
+  padding: 0.75rem 0.4rem;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+.cookies-table thead tr {
+  background-color: var(--innuendo);
+  color: #fff;
+}
+
+.cookies-table code {
+  padding: 0.15rem 0.4rem;
+}
+
 /* Scroll to top button */
 
 .scroll-to-top {
@@ -1612,6 +1635,37 @@ form .contact-input-container .incorrect textarea {
   .cookies_show {
     left: 20px;
     width: calc(100% - 40px);
+  }
+  .cookies-table thead {
+    display: none;
+  }
+
+  .cookies-table tbody tr {
+    display: block;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .cookies-table tbody td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+  }
+  .cookies-table tbody td:last-child {
+    border-bottom: none;
+  }
+  .cookies-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: var(--innuendo);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+  }
+  .cookies-table code {
+    padding: 0;
   }
   .extra-grid {
     gap: 30px;
