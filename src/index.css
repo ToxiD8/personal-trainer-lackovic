@@ -69,7 +69,7 @@ ul {
 
 /* Cookies */
 
-.cookies_container {
+.cookies-banner {
   position: fixed;
   bottom: 30px;
   left: -470px;
@@ -86,44 +86,50 @@ ul {
   left: 30px;
 }
 
-.cookies_window {
+.cookies-banner-header {
   display: flex;
   align-items: center;
   column-gap: 10px;
 }
 
-.cookies_window svg {
-  font-size: 32px;
+.cookies-banner-header svg:first-child {
+  font-size: 30px;
   color: var(--innuendo);
 }
 
-.cookies_window h2 {
+.cookies-banner-header h2 + svg {
+  font-size: 25px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.cookies-banner-header h2 {
   font-weight: 600;
   font-size: 16px;
 }
 
-.cookies_container .cookies_data {
+.cookies-banner .cookies-banner-content {
   margin-top: 12px;
 }
 
-.cookies_container .cookies_data p {
+.cookies-banner .cookies-banner-content p {
   color: #333;
   font-size: 15px;
   line-height: 1.3;
   text-align: justify;
 }
 
-.cookies_data a {
+.cookies-banner-content a {
   color: var(--innuendo);
   text-decoration: none;
   margin-left: 5px;
 }
 
-.cookies_data a:hover {
+.cookies-banner-content a:hover {
   text-decoration: underline;
 }
 
-.cookies_container .cookies_buttons {
+.cookies-banner .cookies-buttons {
   margin-top: 16px;
   width: 100%;
   display: flex;
@@ -132,7 +138,7 @@ ul {
   gap: 15px;
 }
 
-.cookies_buttons .cookies_button {
+.cookies-buttons .cookies-button {
   border: 1px solid var(--innuendo);
   color: var(--innuendo);
   padding: 8px 0;
@@ -143,7 +149,7 @@ ul {
   transition: all 0.2s ease;
 }
 
-.cookies_buttons > :hover {
+.cookies-buttons > :hover {
   color: #fff;
   background-color: var(--innuendo);
 }
@@ -895,6 +901,7 @@ ul {
   margin-bottom: 20px;
   color: #888;
   min-height: 40px;
+  font-weight: 500;
 }
 
 .extra-price {
@@ -1722,6 +1729,9 @@ form .contact-input-container .incorrect textarea {
 }
 
 @media (max-width: 388px) {
+  .cookies-banner {
+    padding: 15px 14px 22px;
+  }
   #intro {
     background-position: -180px top;
   }
@@ -1731,11 +1741,11 @@ form .contact-input-container .incorrect textarea {
 }
 
 @media (max-width: 336px) {
-  .cookies_container .cookies_buttons {
+  .cookies-banner .cookies-buttons {
     flex-direction: column;
     gap: 13px;
   }
-  .cookies_buttons .cookies_button {
+  .cookies-buttons .cookies-button {
     width: 100%;
     max-width: 150px;
   }

@@ -1,6 +1,8 @@
 import { FaCookieBite } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useCookieConsent from "../utils/useCookieConsent";
 
 const GA_ID = "G-RHSJVQ329G";
 
@@ -26,32 +28,11 @@ const loadGoogleAnalytics = () => {
 const Cookies = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { consent, accept, decline } = useCookieConsent();
 
-  // scrolls smoothly to section from navbar links
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   if (location.state?.scrollTo) {
-  //     setTimeout(() => {
-  //       const section = document.getElementById(location.state.scrollTo);
-  //       if (section) {
-  //         const top = section.getBoundingClientRect().top + window.scrollY;
-  //         window.scrollTo({ top, behavior: "smooth" });
-  //       }
-  //     }, 300);
-  //   }
-  // }, [location]);
-
-  // parsing cookie
   useEffect(() => {
-    const cookieValue = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("cookiesAccepted="))
-      ?.split("=")[1];
-
-    if (cookieValue === "true") loadGoogleAnalytics();
-
-    if (cookieValue !== undefined) return;
+    if (consent === "true") loadGoogleAnalytics();
+    if (consent !== null) return;
 
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -61,40 +42,36 @@ const Cookies = () => {
     }, 1500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [consent]);
 
   const closeBanner = () => {
     setIsAnimating(false);
-
     setTimeout(() => {
       setIsVisible(false);
     }, 500);
   };
 
   const handleAccept = () => {
-    document.cookie =
-      "cookiesAccepted=true; max-age=2592000; path=/; SameSite=Lax; Secure";
+    accept();
     loadGoogleAnalytics();
     closeBanner();
   };
 
   const handleDecline = () => {
-    document.cookie =
-      "cookiesAccepted=false; max-age=2592000; path=/; SameSite=Lax; Secure";
+    decline();
     closeBanner();
   };
 
   return (
     <>
       {isVisible && (
-        <div
-          className={`cookies_container ${isAnimating ? "cookies_show" : ""}`}
-        >
-          <div className="cookies_window">
+        <div className={`cookies-banner ${isAnimating ? "cookies_show" : ""}`}>
+          <div className="cookies-banner-header">
             <FaCookieBite />
             <h2>Táto stránka používa cookies</h2>
+            <IoMdClose onClick={closeBanner} />
           </div>
-          <div className="cookies_data">
+          <div className="cookies-banner-content">
             <p>
               Súbory cookie používame na zhromažďovanie a analýzu informácií o
               výkone a používaní stránok, na poskytovanie funkcií sociálnych
@@ -107,16 +84,16 @@ const Cookies = () => {
               </Link>
             </p>
           </div>
-          <div className="cookies_buttons">
+          <div className="cookies-buttons">
             <button
-              className="cookies_button"
+              className="cookies-button"
               id="acceptBtn"
               onClick={handleAccept}
             >
               Povoliť
             </button>
             <button
-              className="cookies_button"
+              className="cookies-button"
               id="declineBtn"
               onClick={handleDecline}
             >
