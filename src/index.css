@@ -355,6 +355,14 @@ ul {
 
 /* Intersection observer */
 
+.animate-right {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
 .animate-bottom {
   opacity: 0;
   transform: translateY(50px);

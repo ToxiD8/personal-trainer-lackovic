@@ -9,7 +9,7 @@ const About = () => {
       <section id="about">
         <div className="about-overlay" />
         <div className="about-container">
-          <div className="about-left animate-bottom" data-delay="200">
+          <div className="about-left animate-right" data-delay="300">
             <h1>O mne</h1>
             <h2>Simona Lackovičová</h2>
             <h3>Osobná trénerka</h3>

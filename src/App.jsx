@@ -26,28 +26,13 @@ const MainPage = () => {
 
   // Intersection Observer
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-          // else {
-          //   entry.target.classList.remove("visible");
-        }
-      });
-    });
-
-    const hiddenElements = document.querySelectorAll(
-      ".animate-left, .animate-right",
-    );
-    hiddenElements.forEach((el) => {
-      observer.observe(el);
-    });
-
     const localObservers = [];
 
-    const extraItems = document.querySelectorAll(".animate-bottom");
-    extraItems.forEach((el) => {
+    const animated = document.querySelectorAll(
+      ".animate-right, .animate-bottom",
+    );
+
+    animated.forEach((el) => {
       const localObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -57,17 +42,14 @@ const MainPage = () => {
             }, delay);
             localObserver.unobserve(entry.target);
           }
-          // else {
-          //   entry.target.classList.remove("visible");
-          // }
         });
       });
+
       localObserver.observe(el);
       localObservers.push(localObserver);
     });
 
     return () => {
-      observer.disconnect();
       localObservers.forEach((lo) => lo.disconnect());
     };
   }, []);

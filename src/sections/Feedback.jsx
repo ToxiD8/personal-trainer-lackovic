@@ -11,7 +11,7 @@ const Feedback = () => {
   return (
     <section id="feedback">
       <div className="feedback-container">
-        <div className="feedback-inner animate-bottom">
+        <div className="feedback-inner animate-bottom" data-delay="300">
           <h1>Referencie</h1>
           {feedbacks.length > 0 && (
             <Swiper

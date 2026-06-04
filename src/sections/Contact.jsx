@@ -121,8 +121,8 @@ const Contact = () => {
     <section id="contact">
       <div className="contact-container">
         <div className="contact-row">
-          <div className="contact-left">
-            <form id="form" className="animate-bottom" onSubmit={handleSubmit}>
+          <div className="contact-left animate-right" data-delay="300">
+            <form id="form" onSubmit={handleSubmit}>
               <div className="contact-left-title">
                 <h1>Napíšte mi</h1>
               </div>
@@ -165,7 +165,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="contact-right animate-bottom">
+          <div className="contact-right animate-bottom" data-delay="300">
             <div className="contact-details">
               <div className="contact-details-title">
                 <h2>Kontaktné údaje:</h2>

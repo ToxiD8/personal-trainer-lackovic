@@ -3,9 +3,9 @@ import Accordion from "react-bootstrap/Accordion";
 const Faq = () => {
   return (
     <section id="faq">
-      <div className="faq-container animate-bottom">
+      <div className="faq-container animate-bottom" data-delay="300">
         <h1>Často kladené otázky</h1>
-        <Accordion defaultActiveKey="0" className="animate-bottom">
+        <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
