@@ -1413,6 +1413,11 @@ form .contact-input-container .incorrect textarea {
   padding-left: 0;
 }
 
+.footer-nav ul li {
+  display: flex;
+  align-items: center;
+}
+
 .footer-nav ul li button {
   font-size: 16px;
   color: #888;
@@ -1451,7 +1456,8 @@ form .contact-input-container .incorrect textarea {
 .footer-contact-icon {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 7px;
   color: var(--innuendo);
 }
 
@@ -1459,7 +1465,7 @@ form .contact-input-container .incorrect textarea {
   font-size: 1.5rem;
 }
 
-.footer-contact h6 {
+.footer-contact h2 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0.5rem;
