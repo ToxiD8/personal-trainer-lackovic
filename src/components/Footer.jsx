@@ -21,7 +21,6 @@ const Footer = () => {
 
   return (
     <footer id="footer">
-      <div className="footer-overlay" />
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-widget">
