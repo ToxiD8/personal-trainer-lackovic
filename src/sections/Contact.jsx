@@ -165,7 +165,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="contact-right animate-bottom" data-delay="300">
+          <div className="contact-right animate-right" data-delay="400">
             <div className="contact-details">
               <div className="contact-details-title">
                 <h2>Kontaktné údaje:</h2>

@@ -1117,7 +1117,7 @@ ul {
 
 #contact {
   position: relative;
-  padding: 7rem 0 23.5rem;
+  padding: 7rem 0 24rem;
   background-color: #04070c;
   overflow: visible;
 }
@@ -1203,7 +1203,7 @@ form .contact-input-container .incorrect textarea {
 }
 
 .contact-left textarea {
-  height: 210px;
+  min-height: 210px;
   padding-top: 15px;
   resize: vertical;
 }
