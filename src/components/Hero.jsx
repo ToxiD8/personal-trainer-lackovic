@@ -38,11 +38,11 @@ const Hero = ({ scrollToContact }) => {
         <picture>
           <source
             media="(max-width: 767px)"
-            srcSet="/assets/images/hero/hero_bg_mobile.webp"
+            srcSet="/assets/images/hero/hero-bg-mobile.webp"
           />
           <img
             ref={bgRef}
-            src="/assets/images/hero/hero_bg.webp"
+            src="/assets/images/hero/hero-bg.webp"
             alt="Hero"
             fetchPriority="high"
             decoding="async"

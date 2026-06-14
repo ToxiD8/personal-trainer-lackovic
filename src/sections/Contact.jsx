@@ -17,7 +17,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    // return;
+    return;
     const tryRender = () => {
       if (
         !window.turnstile ||

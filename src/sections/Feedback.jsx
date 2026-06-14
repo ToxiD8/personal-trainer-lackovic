@@ -15,7 +15,6 @@ const Feedback = () => {
           <h1>Referencie</h1>
           {feedbacks.length > 0 && (
             <Swiper
-              className="animate-bottom"
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}
               navigation

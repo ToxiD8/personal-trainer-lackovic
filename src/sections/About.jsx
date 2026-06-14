@@ -7,7 +7,6 @@ const About = () => {
   return (
     <>
       <section id="about">
-        <div className="about-overlay" />
         <div className="about-container">
           <div className="about-left animate-right" data-delay="300">
             <h1>O mne</h1>

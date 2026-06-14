@@ -12,12 +12,15 @@ const Pricing = ({ scrollToContact }) => {
             transformačnú cestu ešte dnes!
           </p>
         </div>
-        <div className="pricing-standard animate-bottom" data-delay="300">
-          <div className="pricing-title">
+        <div className="pricing-standard">
+          <div className="pricing-title animate-bottom" data-delay="400">
             <FaDumbbell className="price-title-icon" />
             <h2>Standard</h2>
           </div>
-          <div className="pricing-grid pricing-top">
+          <div
+            className="pricing-grid pricing-top animate-bottom"
+            data-delay="500"
+          >
             <div className="box pricing-left">
               <div className="title">
                 1 tréning<span>(dvojica)</span>
@@ -82,12 +85,15 @@ const Pricing = ({ scrollToContact }) => {
             </div>
           </div>
         </div>
-        <div className="pricing-delux animate-bottom" data-delay="300">
-          <div className="pricing-title">
+        <div className="pricing-delux">
+          <div className="pricing-title animate-bottom" data-delay="300">
             <FaDumbbell className="price-title-icon" />
             <h2>Delux</h2>
           </div>
-          <div className="pricing-grid pricing-bottom">
+          <div
+            className="pricing-grid pricing-bottom animate-bottom"
+            data-delay="400"
+          >
             <div className="box pricing-left">
               <div className="title">
                 1 tréning<span>(individual)</span>
@@ -158,7 +164,7 @@ const Pricing = ({ scrollToContact }) => {
             <h2>Extra služby</h2>
           </div>
           <div className="extra-grid">
-            <div className="extra-item animate-bottom" data-delay="400">
+            <div className="extra-item animate-bottom" data-delay="300">
               <h3>Online Coaching</h3>
               <h4>Vstupná konzultácia a 4x progress check</h4>
               <span className="extra-price">
@@ -167,7 +173,7 @@ const Pricing = ({ scrollToContact }) => {
                 <span>mesiac</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="500">
+            <div className="extra-item animate-bottom" data-delay="400">
               <h3>Jedálniček na mieru</h3>
               <h4>Podrobný plán stravovania podľa individuálnych potrieb</h4>
               <span className="extra-price">
@@ -176,7 +182,7 @@ const Pricing = ({ scrollToContact }) => {
                 <span>mesiac</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="600">
+            <div className="extra-item animate-bottom" data-delay="500">
               <h3>Odborná konzultácia</h3>
               <h4>Individuálne poradenstvo ohľadom stravovania a tréningu</h4>
               <span className="extra-price">
@@ -185,7 +191,7 @@ const Pricing = ({ scrollToContact }) => {
                 <span>jednorázovo</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="700">
+            <div className="extra-item animate-bottom" data-delay="600">
               <h3>Odborný screening</h3>
               <h4>Detailná analýza fyzického stavu a cieľov</h4>
               <span className="extra-price">

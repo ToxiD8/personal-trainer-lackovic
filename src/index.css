@@ -17,7 +17,7 @@
 
 :root {
   --innuendo: #ab2e56;
-  --lightgray: #e5e5e5;
+  --sienna: #953e20; /* #c15a3b #e97451 */
   --bg-pattern: url("/assets/images/bg-pattern.svg");
 }
 
@@ -30,9 +30,26 @@ body {
 #footer {
   background-image: var(--bg-pattern);
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: bottom center;
   background-attachment: fixed;
 }
+
+#contact {
+  background-image: url("/assets/images/contact/contact-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* #footer {
+  background-image: url("/assets/images/footer/footer-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-attachment: fixed;
+} */
 
 h1,
 h2,
@@ -55,7 +72,7 @@ ul {
 
 *:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 3px var(--innuendo) !important;
+  box-shadow: 0 0 0 3px var(--sienna) !important;
 }
 
 #pricing h1,
@@ -65,6 +82,7 @@ ul {
   font-size: 30px;
   text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 3px;
 }
 
 /* Cookies */
@@ -94,7 +112,7 @@ ul {
 
 .cookies-banner-header svg:first-child {
   font-size: 30px;
-  color: var(--innuendo);
+  color: var(--sienna);
 }
 
 .cookies-banner-header h2 + svg {
@@ -120,7 +138,7 @@ ul {
 }
 
 .cookies-banner-content a {
-  color: var(--innuendo);
+  color: var(--sienna);
   text-decoration: none;
   margin-left: 5px;
 }
@@ -139,8 +157,8 @@ ul {
 }
 
 .cookies-buttons .cookies-button {
-  border: 1px solid var(--innuendo);
-  color: var(--innuendo);
+  border: 1px solid var(--sienna);
+  color: var(--sienna);
   padding: 8px 0;
   background: #fff;
   cursor: pointer;
@@ -151,7 +169,7 @@ ul {
 
 .cookies-buttons > :hover {
   color: #fff;
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
 }
 
 /* Cookies sub-page */
@@ -172,7 +190,7 @@ ul {
 
 .cookies-container h1 {
   font-size: 30px;
-  color: var(--innuendo);
+  color: var(--sienna);
   font-weight: 600;
   margin-bottom: 2rem;
 }
@@ -193,7 +211,7 @@ ul {
 }
 
 .cookies-content p a {
-  color: var(--innuendo);
+  color: var(--sienna);
   text-decoration: none;
 }
 
@@ -201,7 +219,7 @@ ul {
   background: none;
   border: none;
   text-decoration: none;
-  color: var(--innuendo);
+  color: var(--sienna);
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
@@ -222,7 +240,7 @@ ul {
 }
 
 .cookies-table thead tr {
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
   color: #fff;
 }
 
@@ -297,7 +315,7 @@ ul {
 }
 
 .menu-open .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ab2e56' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23953e20' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-toggler:focus {
@@ -324,7 +342,7 @@ ul {
   text-transform: uppercase;
   transition: 0.5s;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   font-size: 13px;
   margin-right: 25px;
 }
@@ -341,7 +359,7 @@ ul {
   height: 2px;
   bottom: 5px;
   left: 0;
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
   transition: width 0.4s ease-in-out;
 }
 
@@ -531,11 +549,12 @@ ul {
   position: relative;
 }
 
-.about-overlay {
+#about::before {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 25%);
-  pointer-events: none;
+  z-index: 0;
 }
 
 .about-container {
@@ -560,19 +579,21 @@ ul {
   padding-bottom: 2rem;
   font-size: 30px;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .about-left h2 {
   font-size: 3rem;
   font-weight: 600;
   padding-bottom: 1rem;
+  letter-spacing: 2px;
 }
 
 .about-left h3 {
   font-size: 2rem;
   font-weight: 500;
   padding-bottom: 1rem;
-  color: var(--innuendo);
+  color: var(--sienna);
 }
 
 .about-left-text p {
@@ -606,7 +627,7 @@ ul {
 }
 
 .about-left-socials a:hover {
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
 }
 
 .about-left-socials a:hover .social-icon {
@@ -640,7 +661,6 @@ ul {
 
 .pricing-container {
   overflow: hidden;
-  position: relate;
 }
 
 .pricing-container .pricing-header {
@@ -661,30 +681,31 @@ ul {
   margin-bottom: 0;
 }
 
-.pricing-title {
+.pricing-container .pricing-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
   width: 150px;
-  margin: 0 auto 60px;
+  margin: 0 auto 110px;
   padding: 5px;
 }
 
-.price-title-icon {
+.pricing-container .price-title-icon {
   align-items: center;
   text-align: center;
-  color: var(--innuendo);
-  width: 1.5rem;
+  color: var(--sienna);
+  min-width: 1.5rem;
   height: 1.5rem;
   transform: rotate(-45deg);
 }
 
-.pricing-title h2 {
+.pricing-container .pricing-title h2 {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 0;
   font-weight: 600;
   text-transform: uppercase;
@@ -695,15 +716,13 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px 70px;
-  padding: 20px;
-  align-items: stretch;
+  gap: 30px;
+  align-items: flex-start;
   margin-bottom: 5rem;
 }
 
-.pricing-container .pricing-grid .box {
-  width: min(370px, 90%);
-  border: 1px solid #eee;
+.pricing-container .box {
+  width: min(400px, 90%);
   text-align: center;
   padding: 30px;
   background: #fff;
@@ -713,60 +732,44 @@ ul {
   color: #000;
 }
 
-.pricing-container .pricing-grid .box .title {
+.pricing-container .box .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #000;
 }
 
-.pricing-container .pricing-grid .box .title span {
+.pricing-container .box span {
   display: block;
   font-size: 14px;
   color: #888;
 }
 
-.pricing-container .price {
+.pricing-container .box .price {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
 }
 
-.pricing-container .price-icon {
-  font-size: 20px;
-  margin-left: 10px;
-  color: #888;
-}
-
-.pricing-container .price p {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 0;
-  padding-left: 5px;
-}
-
-.pricing-container .pricing-grid .box .price b {
+.pricing-container .box .price b {
   display: block;
   font-size: 40px;
   margin-bottom: -5px;
 }
 
-.pricing-container .pricing-grid .pricing-right {
-  transform: scale(1.2);
-  /* background: linear-gradient(90deg, #111, var(--innuendo)); */
-  background: url(/assets/images/pricing/slanted-gradient.svg) no-repeat center;
-  background-size: cover;
+.pricing-container .box .price .price-icon {
+  font-size: 20px;
+  margin-left: 10px;
 }
 
-.pricing-container .pricing-grid .pricing-right .title {
-  color: #fff;
+.pricing-container .box .price p {
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-left: 5px;
 }
 
-.pricing-container .pricing-grid .pricing-right .price {
-  color: #fff;
-}
-
-.pricing-container .gradient-line {
+.pricing-container .box .gradient-line {
   height: 1px;
   width: 100%;
   margin: 30px 0 22px;
@@ -778,7 +781,97 @@ ul {
   );
 }
 
-.pricing-container .pricing-grid .pricing-right .gradient-line {
+.pricing-container .box .features {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.pricing-container .box .features .features-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.pricing-container .box .features .features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-container .box .features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #000;
+  line-height: 1.6;
+}
+
+.pricing-container .box .features .features-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  margin-top: 2px;
+  color: var(--sienna);
+}
+
+.pricing-container .box .button {
+  margin-top: auto;
+}
+
+.pricing-container .box .button button {
+  width: 50%;
+  min-width: 170px;
+  height: 45px;
+  margin: 25px 0 0;
+  padding: 10px;
+  background: linear-gradient(90deg, #111, var(--sienna));
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.pricing-container .box .button button:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.1, 1.1);
+  transform-origin: center center;
+}
+
+.pricing-container .pricing-left {
+  padding: 50px 30px;
+  margin-top: -20px;
+}
+
+/* Pricing right */
+
+.pricing-container .pricing-right {
+  /* transform: scale(1.2); */
+  padding: 50px 30px;
+  margin-top: -70px;
+  margin-bottom: -20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(90deg, #000, var(--sienna));
+  /* background: url(/assets/images/pricing/slanted-gradient.svg) no-repeat center; */
+  /* background-size: cover; */
+}
+
+.pricing-container .pricing-right .title {
+  color: #fff;
+}
+
+.pricing-container .pricing-right .price {
+  color: #fff;
+}
+
+.pricing-container .pricing-right .gradient-line {
   background: linear-gradient(
     to right,
     transparent,
@@ -787,72 +880,15 @@ ul {
   );
 }
 
-.pricing-container .pricing-grid .box .features {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.pricing-container .pricing-grid .box .features-title {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  color: #888;
-}
-
-.pricing-container .pricing-grid .box .features ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pricing-container .pricing-grid .box .features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  margin-bottom: 10px;
-  color: #000;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.pricing-container .pricing-grid .box .features li .features-icon {
-  flex-shrink: 0;
-  font-size: 15px;
-  margin-top: 2px;
-  color: var(--innuendo);
-}
-
-.pricing-container .pricing-grid .pricing-right .features li {
+.pricing-container .pricing-right .features {
   color: #fff;
 }
 
-.pricing-container .pricing-grid .box .button {
-  margin-top: auto;
-}
-
-.pricing-container .pricing-grid .box .button button {
-  width: 50%;
-  margin: 25px 0 0;
-  padding: 10px;
-  background: linear-gradient(90deg, #111, var(--innuendo));
+.pricing-container .pricing-right .features li {
   color: #fff;
-  outline: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  font-size: 16px;
 }
 
-.pricing-container .pricing-grid .box .button button:hover {
-  transition: all 0.5s ease;
-  transform: scale(1.1, 1.1);
-  transform-origin: center center;
-}
-
-.pricing-container .pricing-grid .pricing-right .button button {
+.pricing-container .pricing-right .button button {
   background: #fff;
   color: #000;
 }
@@ -871,40 +907,40 @@ ul {
   margin: 0 auto 40px;
 }
 
-.extra-grid {
+.pricing-extra .extra-grid {
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
-.extra-item {
+.pricing-extra .extra-item {
   flex: 1 1 0;
   min-width: 0;
   background: #fff;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid color-mix(in srgb, var(--innuendo) 35%, white);
+  border: 1px solid color-mix(in srgb, var(--sienna) 35%, white);
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
-.extra-item:hover {
+.pricing-extra .extra-item:hover {
   transform: translateY(-6px);
-  border-color: color-mix(in srgb, var(--innuendo) 50%, white);
+  border-color: color-mix(in srgb, var(--sienna) 50%, white);
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
 
-.extra-item h3 {
+.pricing-extra .extra-item h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #000;
 }
 
-.extra-item h4 {
+.pricing-extra .extra-item h4 {
   font-size: 15px;
   margin-bottom: 20px;
   color: #888;
@@ -912,20 +948,24 @@ ul {
   font-weight: 500;
 }
 
-.extra-price {
+.pricing-extra .extra-price {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--innuendo);
+  color: var(--sienna);
   font-weight: 600;
-  gap: 5px;
+  gap: 2px;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: auto;
 }
 
 .pricing-container .extra-price .price-icon {
   margin-left: 0;
+  color: #888;
+  margin: 0 3px;
+  font-size: 16px;
+  min-width: 16px;
 }
 
 /* Feedback */
@@ -935,7 +975,7 @@ ul {
 }
 
 #feedback h1 {
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 .feedback-container {
@@ -955,7 +995,6 @@ ul {
 }
 
 .feedback-inner h1 {
-  margin: 0 0 3rem 0;
   text-align: center;
 }
 
@@ -1079,7 +1118,7 @@ ul {
   --bs-accordion-btn-color: #000;
   --bs-accordion-color: #000;
   --bs-accordion-active-color: #fff;
-  --bs-accordion-active-bg: var(--innuendo);
+  --bs-accordion-active-bg: var(--sienna);
 }
 
 .accordion-header button {
@@ -1091,7 +1130,7 @@ ul {
 }
 
 .accordion-item:hover {
-  --bs-accordion-btn-color: var(--innuendo);
+  --bs-accordion-btn-color: var(--sienna);
 }
 
 .accordion-button.collapsed {
@@ -1099,7 +1138,7 @@ ul {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
   color: #fff;
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
@@ -1120,6 +1159,14 @@ ul {
   padding: 7rem 0 24rem;
   background-color: #04070c;
   overflow: visible;
+}
+
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
 }
 
 .contact-container {
@@ -1169,7 +1216,8 @@ ul {
   padding: 18px;
   font-weight: 500;
   font-size: 15px;
-  color: #000;
+  color: #fff;
+  background: rgba(18, 18, 18, 0.8);
   transition:
     border-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
@@ -1211,7 +1259,7 @@ form .contact-input-container .incorrect textarea {
 .contact-left button {
   width: 100%;
   padding: 10px;
-  background: var(--innuendo);
+  background: var(--sienna);
   color: #fff;
   outline: none;
   border: none;
@@ -1247,7 +1295,7 @@ form .contact-input-container .incorrect textarea {
 .contact-right {
   flex: 1 1 300px;
   max-width: 550px;
-  background-color: #121212;
+  background-color: rgba(18, 18, 18, 0.8);
   padding: 2rem;
   height: 500px;
 }
@@ -1277,7 +1325,7 @@ form .contact-input-container .incorrect textarea {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: var(--innuendo);
+  color: var(--sienna);
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   border-radius: 50%;
@@ -1325,7 +1373,7 @@ form .contact-input-container .incorrect textarea {
 }
 
 .contact-details-content .socials a:hover {
-  background-color: var(--innuendo);
+  background-color: var(--sienna);
   transition: all 0.6s ease;
 }
 
@@ -1387,12 +1435,12 @@ form .contact-input-container .incorrect textarea {
   gap: 30px;
   flex: 1;
   min-width: 220px;
+  color: #fff;
 }
 
 .footer-widget h1 {
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
 }
 
 .footer-logo .logo {
@@ -1409,12 +1457,12 @@ form .contact-input-container .incorrect textarea {
 
 .footer-socials a svg {
   font-size: 1.5em;
-  color: #fff;
   margin-right: 10px;
+  color: #fff;
 }
 
 .footer-socials a:hover svg {
-  color: var(--innuendo);
+  color: var(--sienna);
   transition: all 0.6s ease;
 }
 
@@ -1434,7 +1482,6 @@ form .contact-input-container .incorrect textarea {
 
 .footer-nav ul li button {
   font-size: 16px;
-  color: #888;
   margin: 10px;
   text-decoration: none;
   transition: all 0.6s ease;
@@ -1442,16 +1489,17 @@ form .contact-input-container .incorrect textarea {
   border: none;
   cursor: pointer;
   padding: 0;
+  color: #fff;
 }
 
 .footer-nav ul li button:hover {
   transition: all 0.6s ease;
-  color: var(--innuendo);
+  color: var(--sienna);
 }
 
 .footer-nav svg {
   font-size: 1.3em;
-  color: var(--innuendo);
+  color: var(--sienna);
 }
 
 .footer-contact {
@@ -1472,7 +1520,7 @@ form .contact-input-container .incorrect textarea {
   justify-content: center;
   align-items: flex-start;
   padding-top: 7px;
-  color: var(--innuendo);
+  color: var(--sienna);
 }
 
 .footer-contact-icon svg {
@@ -1494,8 +1542,8 @@ form .contact-input-container .incorrect textarea {
 }
 
 .footer-bottom p {
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 15px;
+  color: #fff;
 }
 
 /* Responsive design */
@@ -1527,6 +1575,7 @@ form .contact-input-container .incorrect textarea {
 @media (max-width: 991px) {
   #about,
   #feedback,
+  #contact,
   #footer {
     background-attachment: scroll;
   }
@@ -1534,6 +1583,9 @@ form .contact-input-container .incorrect textarea {
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 20px;
+  }
+  #contact {
+    background-image: url("/assets/images/contact/contact-bg-mobile.webp");
   }
   .feedback-item {
     padding: 0 6rem;
@@ -1567,12 +1619,6 @@ form .contact-input-container .incorrect textarea {
   .pricing-container .pricing-grid {
     gap: 20px;
   }
-  .pricing-container .pricing-grid .pricing-right {
-    transform: scale(1);
-  }
-  .pricing-title {
-    margin: 0 auto 20px;
-  }
   .contact-row {
     flex-direction: column;
     align-items: center;
@@ -1581,15 +1627,22 @@ form .contact-input-container .incorrect textarea {
 }
 
 @media (max-width: 869px) {
-  .pricing-container h2 {
-    margin-bottom: 0;
+  .pricing-container .pricing-title:not(.pricing-extra .pricing-title) {
+    margin: 0 auto 60px;
   }
-  .pricing-container .pricing-title {
-    margin: 0 auto 20px;
+  .pricing-container .pricing-grid {
+    align-items: stretch;
   }
-  .extra-grid {
+  .pricing-container .pricing-standard,
+  .pricing-delux {
+    margin: 0 1rem;
+  }
+  .pricing-container .pricing-right {
+    margin: 0;
+  }
+  .pricing-container .extra-grid {
     gap: 20px;
-    padding: 20px 0 25.6px 0;
+    flex-wrap: wrap;
   }
 }
 
@@ -1597,21 +1650,14 @@ form .contact-input-container .incorrect textarea {
   #intro {
     background-position: -130px top;
   }
-  .pricing-container .pricing-grid .box .button button {
-    width: 100%;
-    max-width: 200px;
-  }
-  .extra-grid {
-    flex-wrap: wrap;
-  }
-  .extra-item {
+  .pricing-container .extra-item {
     flex: 0 0 calc(50% - 15px);
   }
 }
 
 @media (max-width: 767px) {
   .hero-bg {
-    background-image: url("/assets/images/hero/hero_bg_mobile.webp");
+    background-image: url("/assets/images/hero/hero-bg-mobile.webp");
   }
   .swiper-button-prev,
   .swiper-button-next {
@@ -1666,14 +1712,12 @@ form .contact-input-container .incorrect textarea {
   .cookies-table thead {
     display: none;
   }
-
   .cookies-table tbody tr {
     display: block;
     border: 1px solid #e0e0e0;
     margin-bottom: 1rem;
     overflow: hidden;
   }
-
   .cookies-table tbody td {
     display: block;
     border: none;
@@ -1687,19 +1731,15 @@ form .contact-input-container .incorrect textarea {
     content: attr(data-label);
     display: block;
     font-weight: 600;
-    color: var(--innuendo);
+    color: var(--sienna);
     margin-bottom: 0.2rem;
     text-transform: uppercase;
   }
   .cookies-table code {
     padding: 0;
   }
-  .extra-grid {
-    gap: 30px;
-  }
-  .extra-item {
-    flex: 0 0 100%;
-    max-width: 330px;
+  .pricing-container {
+    margin: 0;
   }
   .contact-right {
     max-width: 90%;
@@ -1737,6 +1777,16 @@ form .contact-input-container .incorrect textarea {
   .hero-title {
     font-size: 82px;
   }
+  .pricing-container .pricing-extra {
+    padding: 0 1rem;
+  }
+  .pricing-container .extra-grid {
+    gap: 30px;
+  }
+  .pricing-container .extra-item {
+    flex: 0 0 100%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 406px) {
@@ -1771,5 +1821,12 @@ form .contact-input-container .incorrect textarea {
   }
   .hero-content {
     bottom: 60px;
+  }
+  .pricing-container .extra-grid {
+    margin: 0 1rem;
+  }
+  .pricing-container .box .button button {
+    min-width: auto;
+    width: 100%;
   }
 }
