@@ -28,17 +28,20 @@ const loadGoogleAnalytics = () => {
 const Cookies = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { consent, accept, decline } = useCookieConsent();
+  const [showSettings, setShowSettings] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
+  const { consent, acceptAll, declineAll, savePreferences } =
+    useCookieConsent();
 
   useEffect(() => {
-    if (consent === "true") loadGoogleAnalytics();
-    if (consent !== null) return;
+    if (consent !== null) {
+      if (consent.analytics) loadGoogleAnalytics();
+      return;
+    }
 
     const timer = setTimeout(() => {
       setIsVisible(true);
-      requestAnimationFrame(() => {
-        setIsAnimating(true);
-      });
+      requestAnimationFrame(() => setIsAnimating(true));
     }, 1500);
 
     return () => clearTimeout(timer);
@@ -48,58 +51,141 @@ const Cookies = () => {
     setIsAnimating(false);
     setTimeout(() => {
       setIsVisible(false);
+      setShowSettings(false);
     }, 500);
   };
 
-  const handleAccept = () => {
-    accept();
+  const handleAcceptAll = () => {
+    acceptAll();
     loadGoogleAnalytics();
     closeBanner();
   };
 
-  const handleDecline = () => {
-    decline();
+  const handleDeclineAll = () => {
+    declineAll();
+    closeBanner();
+  };
+
+  const handleSavePreferences = () => {
+    savePreferences({ analytics: analyticsEnabled });
+    if (analyticsEnabled) loadGoogleAnalytics();
     closeBanner();
   };
 
   return (
     <>
       {isVisible && (
-        <div className={`cookies-banner ${isAnimating ? "cookies_show" : ""}`}>
-          <div className="cookies-banner-header">
-            <FaCookieBite />
-            <h2>Táto stránka používa cookies</h2>
-            <IoMdClose onClick={closeBanner} />
-          </div>
-          <div className="cookies-banner-content">
-            <p>
-              Súbory cookie používame na zhromažďovanie a analýzu informácií o
-              výkone a používaní stránok, na poskytovanie funkcií sociálnych
-              médií a na vylepšenie a prispôsobenie obsahu a reklám.
-              <Link
-                to="/cookies"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              >
-                Viac o cookies...
-              </Link>
-            </p>
-          </div>
-          <div className="cookies-buttons">
-            <button
-              className="cookies-button"
-              id="acceptBtn"
-              onClick={handleAccept}
-            >
-              Povoliť
-            </button>
-            <button
-              className="cookies-button"
-              id="declineBtn"
-              onClick={handleDecline}
-            >
-              Zamietnuť
-            </button>
-          </div>
+        <div className={`cookies-banner ${isAnimating ? "cookies-show" : ""}`}>
+          {!showSettings ? (
+            <>
+              <div className="cookies-banner-header">
+                <FaCookieBite />
+                <h2>Táto stránka používa cookies</h2>
+                <IoMdClose onClick={handleDeclineAll} />
+              </div>
+              <div className="cookies-banner-content">
+                <p>
+                  Záleží nám na tom, aby sa ti u nás dobre listovalo. Používame
+                  preto cookies, jedny sú nevyhnutné pre správny chod stránky,
+                  druhé nám pomáhajú zistiť, čo návštevníkov zaujíma najviac.{" "}
+                  <Link
+                    to="/cookies"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                  >
+                    Viac o cookies...
+                  </Link>
+                </p>
+              </div>
+              <div className="cookies-buttons">
+                <button
+                  className="cookies-button"
+                  id="acceptBtn"
+                  onClick={handleAcceptAll}
+                >
+                  Povoliť všetko
+                </button>
+                <button
+                  className="cookies-button"
+                  id="declineBtn"
+                  onClick={handleDeclineAll}
+                >
+                  Zamietnuť
+                </button>
+                <button
+                  className="cookies-button"
+                  id="settingsBtn"
+                  onClick={() => setShowSettings(true)}
+                >
+                  Nastavenia
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="cookies-banner-header">
+                <FaCookieBite />
+                <h2>Nastavenia cookies</h2>
+                <IoMdClose onClick={handleDeclineAll} />
+              </div>
+              <div className="cookies-settings-content">
+                <div className="cookies-category">
+                  <div className="cookies-category-header">
+                    <div>
+                      <span className="cookies-category-title">Nevyhnutné</span>
+                      <p className="cookies-category-desc">
+                        Zabezpečujú základné funkcie stránky ako navigácia a
+                        prístup k zabezpečeným sekciám. Bez nich stránka nemôže
+                        správne fungovať.
+                      </p>
+                    </div>
+                    <div
+                      className="cookies-toggle cookies-toggle--locked"
+                      title="Vždy aktívne"
+                    >
+                      <div className="cookies-toggle-thumb" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="cookies-category">
+                  <div className="cookies-category-header">
+                    <div>
+                      <span className="cookies-category-title">Analytické</span>
+                      <p className="cookies-category-desc">
+                        Pomáhajú nám pochopiť, ako návštevníci používajú stránku
+                        (Google Analytics). Všetky údaje sú anonymné.
+                      </p>
+                    </div>
+                    <button
+                      className={`cookies-toggle ${analyticsEnabled ? "cookies-toggle--on" : ""}`}
+                      onClick={() => setAnalyticsEnabled((prev) => !prev)}
+                      aria-label="Prepnúť analytické cookies"
+                    >
+                      <div className="cookies-toggle-thumb" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="cookies-buttons">
+                <button
+                  className="cookies-button"
+                  id="backBtn"
+                  onClick={() => setShowSettings(false)}
+                >
+                  Späť
+                </button>
+                <button
+                  className="cookies-button"
+                  id="acceptBtn"
+                  onClick={handleSavePreferences}
+                >
+                  Uložiť nastavenia
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </>

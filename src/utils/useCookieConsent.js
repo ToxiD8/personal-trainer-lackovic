@@ -1,36 +1,37 @@
 import { useState } from "react";
 
-const COOKIE_NAME = "cookiesAccepted";
+const COOKIE_NAME = "cookieConsent";
 const COOKIE_MAX_AGE = "max-age=2592000; path=/; SameSite=Lax; Secure";
 
-const getCookieValue = () => {
-  return (
-    document.cookie
-      .split("; ")
-      .find((row) => row.startsWith(`${COOKIE_NAME}=`))
-      ?.split("=")[1] ?? null
-  );
+const getStoredConsent = () => {
+  const raw = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(`${COOKIE_NAME}=`))
+    ?.split("=")[1];
+
+  if (!raw) return null;
+
+  try {
+    return JSON.parse(decodeURIComponent(raw));
+  } catch {
+    return null;
+  }
 };
 
 const useCookieConsent = () => {
-  const [consent, setConsent] = useState(() => getCookieValue());
+  const [consent, setConsent] = useState(() => getStoredConsent());
 
-  const accept = () => {
-    document.cookie = `${COOKIE_NAME}=true; ${COOKIE_MAX_AGE}`;
-    setConsent("true");
+  const saveConsent = (preferences) => {
+    const value = encodeURIComponent(JSON.stringify(preferences));
+    document.cookie = `${COOKIE_NAME}=${value}; ${COOKIE_MAX_AGE}`;
+    setConsent(preferences);
   };
 
-  const decline = () => {
-    document.cookie = `${COOKIE_NAME}=false; ${COOKIE_MAX_AGE}`;
-    setConsent("false");
-  };
+  const acceptAll = () => saveConsent({ necessary: true, analytics: true });
+  const declineAll = () => saveConsent({ necessary: true, analytics: false });
+  const savePreferences = (prefs) => saveConsent({ necessary: true, ...prefs });
 
-  const reset = () => {
-    document.cookie = `${COOKIE_NAME}=; max-age=0; path=/`;
-    setConsent(null);
-  };
-
-  return { consent, accept, decline, reset };
+  return { consent, acceptAll, declineAll, savePreferences };
 };
 
 export default useCookieConsent;
