@@ -1186,16 +1186,17 @@ ul {
   --bs-accordion-active-bg: var(--sienna);
 }
 
+.accordion-item:hover {
+  --bs-accordion-btn-color: var(--sienna);
+}
+
 .accordion-header button {
   font-size: 16px;
+  cursor: pointer;
 }
 
 .accordion-button {
   font-weight: 700;
-}
-
-.accordion-item:hover {
-  --bs-accordion-btn-color: var(--sienna);
 }
 
 .accordion-button.collapsed {
