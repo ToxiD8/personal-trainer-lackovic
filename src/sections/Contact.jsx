@@ -124,7 +124,7 @@ const Contact = () => {
           <div className="contact-left animate-right" data-delay="300">
             <form id="form" onSubmit={handleSubmit}>
               <div className="contact-left-title">
-                <h1>Napíšte mi</h1>
+                <h2>Napíš mi</h2>
               </div>
               <div className="contact-input-container">
                 <div>
@@ -176,7 +176,7 @@ const Contact = () => {
                     <FaPhoneAlt />
                   </div>
                   <div className="phone-content">
-                    <h3>Telefón</h3>
+                    <h4>Telefón</h4>
                     <p>
                       <a href="tel:+421908809710">(+421) 908 809 710</a>
                     </p>
@@ -187,7 +187,7 @@ const Contact = () => {
                     <FaAt />
                   </div>
                   <div className="email-content">
-                    <h3>E-mail</h3>
+                    <h4>E-mail</h4>
                     <p>
                       <a href="mailto:lackovicovasimon@gmail.com">
                         lackovicovasimon@gmail.com
@@ -200,7 +200,7 @@ const Contact = () => {
                     <FaLocationDot />
                   </div>
                   <div className="address-content">
-                    <h3>Adresa</h3>
+                    <h4>Adresa</h4>
                     <p>Fabrika Gym</p>
                     <p>Nitrianská 70</p>
                     <p>958 01 Partizánske</p>

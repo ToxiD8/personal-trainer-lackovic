@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-widget">
-            <h1>Menu</h1>
+            <h2>Menu</h2>
             <div className="footer-nav">
               <ul>
                 <li>
@@ -106,14 +106,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-widget">
-            <h1>Kontakt</h1>
+            <h2>Kontakt</h2>
             <div className="footer-contact">
               <div className="footer-contact-item">
                 <div className="footer-contact-icon">
                   <FaLocationDot />
                 </div>
                 <div className="footer-contact-content">
-                  <h2>Adresa</h2>
+                  <h3>Adresa</h3>
                   <p>Fabrika Gym</p>
                   <p>Nitrianská 70</p>
                   <p>958 01 Partizánske</p>
@@ -124,7 +124,7 @@ const Footer = () => {
                   <FaPhoneAlt />
                 </div>
                 <div className="footer-contact-content">
-                  <h2>Telefón</h2>
+                  <h3>Telefón</h3>
                   <p>(+421) 908 809 710</p>
                 </div>
               </div>
@@ -133,7 +133,7 @@ const Footer = () => {
                   <FaAt />
                 </div>
                 <div className="footer-contact-content">
-                  <h2>E-mail</h2>
+                  <h3>E-mail</h3>
                   <p>lackovicovasimon@gmail.com</p>
                 </div>
               </div>

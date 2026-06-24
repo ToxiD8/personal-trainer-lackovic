@@ -75,9 +75,9 @@ ul {
   box-shadow: 0 0 0 3px var(--sienna) !important;
 }
 
-#pricing h1,
-#feedback h1,
-#faq h1 {
+#pricing h2,
+#feedback h2,
+#faq h2 {
   text-align: center;
   font-size: 30px;
   text-transform: uppercase;
@@ -640,21 +640,21 @@ ul {
   padding: 0 5rem 10rem;
 }
 
-#about h1 {
+#about h2 {
   padding-bottom: 2rem;
   font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-.about-left h2 {
+.about-left h3 {
   font-size: 3rem;
   font-weight: 600;
   padding-bottom: 1rem;
   letter-spacing: 2px;
 }
 
-.about-left h3 {
+.about-left h4 {
   font-size: 2rem;
   font-weight: 500;
   padding-bottom: 1rem;
@@ -720,7 +720,7 @@ ul {
   background: #f8f8f8;
 }
 
-#pricing .pricing-header h1 {
+#pricing .pricing-header h2 {
   padding-bottom: 0;
 }
 
@@ -736,7 +736,7 @@ ul {
   padding-bottom: 50px;
 }
 
-.pricing-container .pricing-header h1 {
+.pricing-container .pricing-header h2 {
   font-size: 30px;
   margin-bottom: 10px;
 }
@@ -768,7 +768,7 @@ ul {
   transform: rotate(-45deg);
 }
 
-.pricing-container .pricing-title h2 {
+.pricing-container .pricing-title h3 {
   text-align: center;
   font-size: 18px;
   margin-bottom: 0;
@@ -998,14 +998,14 @@ ul {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
 
-.pricing-extra .extra-item h3 {
+.pricing-extra .extra-item h4 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #000;
 }
 
-.pricing-extra .extra-item h4 {
+.pricing-extra .extra-item h5 {
   font-size: 15px;
   margin-bottom: 20px;
   color: #888;
@@ -1039,7 +1039,7 @@ ul {
   padding: 7rem 0;
 }
 
-#feedback h1 {
+#feedback h2 {
   padding-bottom: 3rem;
 }
 
@@ -1059,7 +1059,7 @@ ul {
   max-width: 70rem;
 }
 
-.feedback-inner h1 {
+.feedback-inner h2 {
   text-align: center;
 }
 
@@ -1165,7 +1165,7 @@ ul {
   background: #f8f8f8;
 }
 
-#faq h1 {
+#faq h2 {
   padding-bottom: 3rem;
 }
 
@@ -1255,17 +1255,20 @@ ul {
   max-width: 500px;
 }
 
-.contact-left .gradient-line {
-  height: 2px;
-  width: 100%;
-  max-width: 160px;
-  margin: 22px 0 22px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.9),
-    transparent
-  );
+.contact-left form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-left-title h2,
+.contact-details-title h2 {
+  font-weight: 600;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .contact-input-container {
@@ -1289,34 +1292,11 @@ ul {
     box-shadow 0.3s ease-in-out;
 }
 
-form .contact-input-container .incorrect input,
-form .contact-input-container .incorrect textarea {
-  border-color: #ff0033;
-  background-color: #ffd5d5;
-}
-
 .contact-inputs::placeholder {
   color: #a9a9a9;
 }
 
-.fa-paper-plane:before {
-  content: "\f1d8";
-}
-
-.contact-left form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-left-title h1 {
-  font-weight: 600;
-  color: #fff;
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-.contact-left textarea {
+.contact-input-container textarea {
   min-height: 210px;
   padding-top: 15px;
   resize: vertical;
@@ -1350,12 +1330,6 @@ form .contact-input-container .incorrect textarea {
 .contact-left button:hover svg {
   transform: translateX(-0.5rem);
   opacity: 1;
-}
-
-.contact-left h2 {
-  margin: 3rem 0 0;
-  color: #fff;
-  font-size: 20px;
 }
 
 .contact-right {
@@ -1397,7 +1371,7 @@ form .contact-input-container .incorrect textarea {
   border-radius: 50%;
 }
 
-.contact-details-content h3 {
+.contact-details-content h4 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -1504,7 +1478,7 @@ form .contact-input-container .incorrect textarea {
   color: #fff;
 }
 
-.footer-widget h1 {
+.footer-widget h2 {
   font-size: 22px;
   font-weight: 600;
 }
@@ -1593,7 +1567,7 @@ form .contact-input-container .incorrect textarea {
   font-size: 1.5rem;
 }
 
-.footer-contact h2 {
+.footer-contact h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0.5rem;

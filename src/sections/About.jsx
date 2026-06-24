@@ -9,9 +9,9 @@ const About = () => {
       <section id="about">
         <div className="about-container">
           <div className="about-left animate-right" data-delay="300">
-            <h1>O mne</h1>
-            <h2>Simona Lackovičová</h2>
-            <h3>Osobná trénerka</h3>
+            <h2>O mne</h2>
+            <h3>Simona Lackovičová</h3>
+            <h4>Osobná trénerka</h4>
             <div className="about-left-text">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

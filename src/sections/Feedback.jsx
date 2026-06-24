@@ -12,7 +12,7 @@ const Feedback = () => {
     <section id="feedback">
       <div className="feedback-container">
         <div className="feedback-inner animate-bottom" data-delay="300">
-          <h1>Referencie</h1>
+          <h2>Referencie</h2>
           {feedbacks.length > 0 && (
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -36,7 +36,7 @@ const Feedback = () => {
                       height="160"
                     />
                     <q>{feedback.text}</q>
-                    <h2>{feedback.name}</h2>
+                    <h3>{feedback.name}</h3>
                   </div>
                 </SwiperSlide>
               ))}
