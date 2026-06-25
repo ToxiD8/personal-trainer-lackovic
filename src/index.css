@@ -90,18 +90,19 @@ ul {
 .cookies-banner {
   position: fixed;
   bottom: 30px;
-  left: -470px;
+  left: 30px;
   max-width: 465px;
   width: 100%;
   background: #eee;
   padding: 15px 25px 22px;
-  transition: left 0.3s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  transform: translateX(calc(-100% - 30px));
+  transition: transform 0.3s ease;
 }
 
-.cookies-show {
-  left: 30px;
+.cookies-banner.cookies-show {
+  transform: translateX(0);
 }
 
 .cookies-banner-header {
@@ -1365,7 +1366,7 @@ ul {
   border-radius: 50%;
 }
 
-.contact-details-content h4 {
+.contact-details-content h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0.5rem;

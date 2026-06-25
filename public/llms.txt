@@ -1,0 +1,13 @@
+# Simona Lackovičová – Osobná trénerka
+
+Webová stránka osobnej trénerky Simony Lackovičovej. Ponúka online a offline
+tréningy, jedálniček na mieru a individuálny koučing.
+
+## Sekcie
+
+- [Úvod](https://simonalackovic.sk/)
+- [O mne](https://simonalackovic.sk/#about)
+- [Cenník](https://simonalackovic.sk/#pricing)
+- [Referencie](https://simonalackovic.sk/#feedback)
+- [FAQ](https://simonalackovic.sk/#faq)
+- [Kontakt](https://simonalackovic.sk/#contact)
