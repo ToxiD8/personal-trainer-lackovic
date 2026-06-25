@@ -637,7 +637,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5rem 10rem;
+  margin: 0 2rem 10rem;
 }
 
 #about h2 {
@@ -704,6 +704,7 @@ ul {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin-right: 2rem;
 }
 
 .about-right img {
@@ -1340,13 +1341,6 @@ ul {
   height: 500px;
 }
 
-.contact-details-title {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
 .contact-details-content {
   display: flex;
   flex-wrap: wrap;
@@ -1608,7 +1602,7 @@ ul {
 
 @media (max-width: 1012px) {
   .contact-right {
-    height: 550px;
+    height: auto;
   }
 }
 
@@ -1644,12 +1638,13 @@ ul {
     align-items: center;
   }
   .about-left {
-    padding: 0 clamp(0.5rem, 5vw, 2rem) 3rem;
+    margin: 0 2rem 2rem;
   }
   .about-right {
     flex: none;
-    width: 100%;
+    width: 90%;
     justify-content: center;
+    margin: 0 2rem;
   }
   .about-right img {
     width: 100%;
@@ -1823,6 +1818,9 @@ ul {
   }
   .hero-title {
     font-size: 82px;
+  }
+  #about {
+    padding-top: 2rem;
   }
   .pricing-container .pricing-extra {
     padding: 0 1rem;
