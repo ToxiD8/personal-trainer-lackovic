@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NavBar from "./components/NavBar";
@@ -78,6 +79,7 @@ function App() {
       </Routes>
       <Footer />
       <Toaster richColors theme="dark" position="bottom-center" />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
