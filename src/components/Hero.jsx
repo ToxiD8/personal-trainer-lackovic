@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import HeroMedia from "./HeroMedia";
 
 const Hero = ({ scrollToContact }) => {
   const bgRef = useRef(null);
@@ -34,23 +35,22 @@ const Hero = ({ scrollToContact }) => {
 
   return (
     <section id="hero">
-      <div className="hero-bg">
-        <picture>
-          <source
-            media="(max-width: 767px)"
-            srcSet="/assets/images/hero/hero-bg-mobile.webp"
-          />
-          <img
-            ref={bgRef}
-            src="/assets/images/hero/hero-bg.webp"
-            alt="Hero"
-            fetchPriority="high"
-            decoding="async"
-            className="hero-bg-image"
-          />
-        </picture>
+      <div className="hero-bg" ref={bgRef}>
+        <HeroMedia
+          posterSrcDesktop="/assets/images/hero/hero-bg.webp"
+          videoSources={[
+            {
+              src: "https://pub-c8df2b2d494f484cb84ac4394114164f.r2.dev/hero.webm",
+              type: "video/webm",
+            },
+            {
+              src: "https://pub-c8df2b2d494f484cb84ac4394114164f.r2.dev/hero.mp4",
+              type: "video/mp4",
+            },
+          ]}
+          alt="Hero"
+        />
       </div>
-      <div className="hero-overlay" />
       <div className="hero-content">
         <div className="hero-eyebrow">Simona Lackovičová Fitness Coaching</div>
         <h1 className="hero-title">

@@ -1,5 +1,5 @@
-import aboutImg from "/assets/images/about/about_img.webp";
-import aboutImgMobile from "/assets/images/about/about_img_mobile.webp";
+import aboutImg from "/assets/images/about/about-img.webp";
+import aboutImgMobile from "/assets/images/about/about-img-mobile.webp";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 
@@ -8,11 +8,17 @@ const About = () => {
     <>
       <section id="about">
         <div className="about-container">
-          <div className="about-left animate-right" data-delay="300">
+          <div className="about-left">
+            <picture aria-hidden="true">
+              <source media="(max-width: 600px)" srcSet={aboutImgMobile} />
+              <img src={aboutImg} width="2400" height="1600" alt="" />
+            </picture>
+          </div>
+          <div className="about-right animate-right" data-delay="500">
             <h2>O mne</h2>
             <h3>Simona Lackovičová</h3>
             <h4>Osobná trénerka</h4>
-            <div className="about-left-text">
+            <div className="about-right-text">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -23,7 +29,7 @@ const About = () => {
                 sunt in culpa qui officia
               </p>
             </div>
-            <div className="about-left-socials">
+            <div className="about-right-socials">
               <a
                 href="https://www.facebook.com/profile.php?id=100004710452990"
                 target="_blank"
@@ -50,16 +56,6 @@ const About = () => {
                 <FaThreads className="social-icon" />
               </a>
             </div>
-          </div>
-          <div className="about-right">
-            <img
-              src={aboutImg}
-              width="600"
-              height="790"
-              srcSet={`${aboutImgMobile} 400w, ${aboutImg} 600w`}
-              sizes="(max-width: 768px) 400px, 550px"
-              alt="About"
-            />
           </div>
         </div>
       </section>
