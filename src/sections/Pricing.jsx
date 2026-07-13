@@ -52,7 +52,7 @@ const Pricing = ({ scrollToContact }) => {
               </div>
               <div className="price">
                 <b>
-                  140<sup>€</sup>
+                  155<sup>€</sup>
                 </b>
                 <FaRegClock className="price-icon" />
                 <p>12 hodín</p>
@@ -125,7 +125,7 @@ const Pricing = ({ scrollToContact }) => {
               </div>
               <div className="price">
                 <b>
-                  288<sup>€</sup>
+                  320<sup>€</sup>
                 </b>
                 <FaRegClock className="price-icon" />
                 <p>20 hodín</p>
@@ -168,7 +168,7 @@ const Pricing = ({ scrollToContact }) => {
               <h4>Online Coaching</h4>
               <h5>Vstupná konzultácia a 4x progress check</h5>
               <span className="extra-price">
-                60<sup>€</sup>
+                70<sup>€</sup>
                 <FaRegClock className="price-icon" />
                 <span>mesiac</span>
               </span>
@@ -177,7 +177,7 @@ const Pricing = ({ scrollToContact }) => {
               <h4>Jedálniček na mieru</h4>
               <h5>Podrobný plán stravovania podľa individuálnych potrieb</h5>
               <span className="extra-price">
-                50<sup>€</sup>
+                60<sup>€</sup>
                 <FaRegClock className="price-icon" />
                 <span>mesiac</span>
               </span>

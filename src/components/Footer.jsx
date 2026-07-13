@@ -89,7 +89,7 @@ const Footer = () => {
                 <li>
                   <MdPlayArrow />
                   <button onClick={(e) => handleNavClick(e, "feedback")}>
-                    Referencie
+                    Recenzie
                   </button>
                 </li>
                 <li>

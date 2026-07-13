@@ -8,12 +8,21 @@
 }
 
 @font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/manrope-v20-latin_latin-ext-regular.woff2")
+    format("woff2");
+}
+
+/* @font-face {
   font-family: "Kanit";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
   src: url("/assets/fonts/kanit-v17-latin_latin-ext-300.woff2") format("woff2");
-}
+} */
 
 :root {
   --innuendo: #ab2e56;
@@ -23,7 +32,7 @@
 }
 
 body {
-  font-family: "Kanit", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 #about,
@@ -34,14 +43,6 @@ body {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-attachment: fixed;
-}
-
-#contact {
-  background-image: url("/assets/images/contact/contact-img2.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 /* #footer {
@@ -1152,6 +1153,16 @@ ul {
   gap: 2.5rem;
 }
 
+.feedback-stars .star {
+  margin-right: 0.5rem;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.feedback-stars .star-filled {
+  color: #e2bc37;
+}
+
 .swiper-slide img {
   width: min(160px, 90%);
   height: auto;
@@ -1160,7 +1171,7 @@ ul {
 
 .swiper-slide q {
   display: block;
-  margin: 2rem auto 0;
+  margin: 0 auto;
   font-size: 15px;
   line-height: 1.5rem;
   font-style: italic;
@@ -1284,9 +1295,14 @@ ul {
 
 #contact {
   position: relative;
-  padding: 7rem 0 24rem;
+  padding: 7rem 0 21rem;
   background-color: #04070c;
   overflow: visible;
+  background-image: url("/assets/images/contact/contact-img.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #contact::before {
@@ -1735,6 +1751,9 @@ ul {
     flex-direction: column;
     align-items: center;
     margin: 0;
+  }
+  .contact-details-content {
+    gap: 2.5rem;
   }
 }
 

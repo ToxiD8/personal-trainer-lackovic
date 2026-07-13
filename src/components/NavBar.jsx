@@ -139,7 +139,7 @@ const NavBar = () => {
               Cenník
             </Nav.Link>
             <Nav.Link onClick={(e) => handleNavClick(e, "feedback")}>
-              Referencie
+              Recenzie
             </Nav.Link>
             <Nav.Link onClick={(e) => handleNavClick(e, "faq")}>FAQ</Nav.Link>
             <Nav.Link onClick={(e) => handleNavClick(e, "contact")}>
