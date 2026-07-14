@@ -12,7 +12,11 @@ const Faq = () => {
             kontaktného formulára alebo e-mailu.
           </p>
         </div>
-        <Accordion defaultActiveKey="0">
+        <Accordion
+          defaultActiveKey="0"
+          className="animate-bottom"
+          data-delay="400"
+        >
           <Accordion.Item eventKey="0">
             <Accordion.Header as="h3">Accordion Item #1</Accordion.Header>
             <Accordion.Body>
