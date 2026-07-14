@@ -3,8 +3,15 @@ import Accordion from "react-bootstrap/Accordion";
 const Faq = () => {
   return (
     <section id="faq">
-      <div className="faq-container animate-bottom" data-delay="300">
-        <h2>Často kladené otázky</h2>
+      <div className="faq-container">
+        <div className="faq-header animate-bottom" data-delay="300">
+          <h2>FAQ - Často kladené otázky</h2>
+          <p>
+            Tu sú niektoré z najčastejších otázok, ktoré mi klienti kladú. Ak
+            máš ďalšie otázky, neváhaj ma kontaktovať prostredníctvom
+            kontaktného formulára alebo e-mailu.
+          </p>
+        </div>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header as="h3">Accordion Item #1</Accordion.Header>

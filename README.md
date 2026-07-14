@@ -4,6 +4,8 @@ A presentation website for a fitness trainer. The site provides visitors with al
 
 > Project is currently under development. All assets such as images and text content are used for testing purposes only.
 
+> Live site: [simonalackovic.sk](https://simonalackovic.sk)
+
 ## Technologies
 
 - HTML, CSS, JavaScript

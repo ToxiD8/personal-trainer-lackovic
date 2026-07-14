@@ -16,13 +16,41 @@
     format("woff2");
 }
 
-/* @font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 300;
+@font-face {
   font-display: swap;
-  src: url("/assets/fonts/kanit-v17-latin_latin-ext-300.woff2") format("woff2");
-} */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/manrope-v20-latin_latin-ext-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/manrope-v20-latin_latin-ext-600.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/manrope-v20-latin_latin-ext-700.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/manrope-v20-latin_latin-ext-800.woff2")
+    format("woff2");
+}
 
 :root {
   --innuendo: #ab2e56;
@@ -81,10 +109,10 @@ ul {
 #feedback h2,
 #faq h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 3px;
+  font-weight: 700;
 }
 
 /* Cookies */
@@ -125,7 +153,7 @@ ul {
 }
 
 .cookies-banner-header h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 17px;
 }
 
@@ -247,7 +275,7 @@ ul {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  padding: 8rem 0 2rem;
+  padding: 7rem 0 2rem;
   background-color: #f8f8f8;
 }
 
@@ -257,15 +285,15 @@ ul {
 }
 
 .cookies-container h1 {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--sienna);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 2rem;
 }
 
 .cookies-content h2 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
   color: #111;
 }
@@ -274,7 +302,7 @@ ul {
   font-size: 15px;
   margin-bottom: 1.5rem;
   line-height: 1.5;
-  color: #414141;
+  color: #474747;
   text-align: justify;
 }
 
@@ -693,47 +721,35 @@ ul {
   justify-content: center;
   flex: 1;
   color: #fff;
-  padding: 0 3rem;
+  padding: 0 5rem 0 2rem;
   position: relative;
 }
 
-/* .about-right::before {
- content: "";
-    position: absolute;
-    top: -10%;
-    bottom: -10%;
-    left: -130px;
-    width: 100px;
-    background: #000;
-    filter: blur(30px);
-    transform: rotate(10deg);
-    transform-origin: center;
-    pointer-events: none;
-    z-index: 0;
-} */
-
 .about-right h2 {
-  padding-bottom: 2rem;
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding-bottom: 50px;
+  font-weight: 700;
 }
 
 .about-right h3 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 30px;
   padding-bottom: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
 .about-right h4 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 25px;
   padding-bottom: 1rem;
   color: var(--sienna);
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
 .about-right-text p {
+  font-size: 15px;
   line-height: 25px;
   text-align: justify;
   overflow-wrap: break-word;
@@ -777,10 +793,6 @@ ul {
   background: #f8f8f8;
 }
 
-#pricing .pricing-header h2 {
-  padding-bottom: 0;
-}
-
 .pricing-container {
   overflow: hidden;
 }
@@ -794,13 +806,14 @@ ul {
 }
 
 .pricing-container .pricing-header h2 {
-  font-size: 30px;
+  color: var(--sienna);
   margin-bottom: 10px;
 }
 
 .pricing-container .pricing-header p {
   font-size: 15px;
   margin-bottom: 0;
+  color: #474747;
 }
 
 .pricing-container .pricing-title {
@@ -827,7 +840,7 @@ ul {
 
 .pricing-container .pricing-title h3 {
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 0;
   font-weight: 600;
   text-transform: uppercase;
@@ -1164,7 +1177,7 @@ ul {
 }
 
 .swiper-slide img {
-  width: min(160px, 90%);
+  width: min(120px, 90%);
   height: auto;
   border-radius: 50%;
 }
@@ -1183,8 +1196,7 @@ ul {
   font-size: 1.3rem;
 }
 
-.swiper-slide h2 {
-  margin: 2rem 0;
+.swiper-slide h3 {
   font-size: 20px;
   font-weight: 600;
 }
@@ -1238,16 +1250,24 @@ ul {
   background: #f8f8f8;
 }
 
-#faq h2 {
-  padding-bottom: 3rem;
+.faq-container .faq-header {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
-.faq-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: auto;
+.faq-container .faq-header h2 {
+  color: var(--sienna);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.faq-container .faq-header p {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: #474747;
 }
 
 .accordion {
@@ -1269,7 +1289,7 @@ ul {
 }
 
 .accordion-button {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .accordion-button.collapsed {
@@ -1289,6 +1309,7 @@ ul {
 .accordion-body {
   text-align: justify;
   font-size: 15px;
+  color: #474747;
 }
 
 /* Contact */
@@ -1341,12 +1362,12 @@ ul {
 
 .contact-left-title h2,
 .contact-details-title h2 {
-  font-weight: 600;
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  font-weight: 700;
 }
 
 .contact-input-container {
@@ -1390,6 +1411,7 @@ ul {
   font-weight: 600;
   cursor: pointer;
   font-size: 16px;
+  letter-spacing: 2px;
 }
 
 .contact-left button span,
@@ -1412,18 +1434,17 @@ ul {
 
 .contact-right {
   flex: 1 1 300px;
-  max-width: 550px;
+  max-width: 500px;
   background-color: rgba(18, 18, 18, 0.6);
   padding: 2rem;
-  height: 500px;
 }
 
 .contact-details-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 3.5rem;
+  gap: 3rem;
   color: #fff;
-  margin-top: 1.3rem;
+  margin-top: 1.8rem;
 }
 
 .contact-details-content > div {
@@ -1443,9 +1464,9 @@ ul {
 }
 
 .contact-details-content h3 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .contact-details-content p {
@@ -1547,7 +1568,6 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: #888;
   font-size: 15px;
   gap: 30px;
   flex: 1;
@@ -1556,14 +1576,15 @@ ul {
 }
 
 .footer-widget h2 {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .footer-logo .logo {
   max-width: 5rem;
   margin-bottom: 15px;
   height: auto;
+  cursor: pointer;
 }
 
 .footer-socials {
@@ -1598,7 +1619,7 @@ ul {
 }
 
 .footer-nav ul li button {
-  font-size: 16px;
+  font-size: 15px;
   margin: 10px;
   text-decoration: none;
   transition: all 0.6s ease;
@@ -1607,6 +1628,7 @@ ul {
   cursor: pointer;
   padding: 0;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .footer-nav ul li button:hover {
@@ -1644,14 +1666,18 @@ ul {
   font-size: 1.5rem;
 }
 
-.footer-contact h3 {
-  font-size: 18px;
-  font-weight: 600;
+.footer-contact-content h3 {
+  font-size: 17px;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
+.footer-contact-content p {
+  font-size: 15px;
+}
+
 .footer-bottom {
-  border-top: 1px solid #454545;
+  border-top: 1px solid #474747;
   text-align: center;
   padding: 20px 0;
   max-width: 1250px;
@@ -1680,12 +1706,6 @@ ul {
   }
   .contact-right {
     width: 100%;
-  }
-}
-
-@media (max-width: 1012px) {
-  .contact-right {
-    height: auto;
   }
 }
 
@@ -1889,7 +1909,7 @@ ul {
     gap: 2rem;
     transform: translateY(0.5rem);
   }
-  .swiper-slide h2 {
+  .swiper-slide h3 {
     font-size: 20px;
   }
   .swiper-slide q {

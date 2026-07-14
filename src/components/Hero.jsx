@@ -52,7 +52,9 @@ const Hero = ({ scrollToContact }) => {
         />
       </div>
       <div className="hero-content">
-        <div className="hero-eyebrow">Simona Lackovičová Fitness Coaching</div>
+        <div className="hero-eyebrow">
+          Simona Lackovičová - Fitness trénerka
+        </div>
         <h1 className="hero-title">
           <span className="hero-title-line">Hackujem telá.</span>
           <span className="hero-title-line">Prepínam mysle.</span>

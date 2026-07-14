@@ -8,8 +8,9 @@ const Pricing = ({ scrollToContact }) => {
         <div className="pricing-header animate-bottom" data-delay="300">
           <h2>Cenník</h2>
           <p>
-            Vyberte si balíček, ktorý vám najviac vyhovuje a začnite svoju
-            transformačnú cestu ešte dnes!
+            Vyber si balíček podľa svojich potrieb a cieľov. Na výber máš balík
+            STANDARD, kde trénuješ vo dvojici alebo DELUX, kde trénuješ
+            individuálne.
           </p>
         </div>
         <div className="pricing-standard">

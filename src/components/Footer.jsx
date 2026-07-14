@@ -1,22 +1,14 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaAt } from "react-icons/fa";
 import { FaThreads, FaLocationDot } from "react-icons/fa6";
 import { MdPlayArrow } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { scrollToSection } from "../utils/scrollToSection";
 import logo from "/assets/images/logo/logo.webp";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const handleNavClick = (e, sectionId) => {
-    e.preventDefault();
-    if (location.pathname === "/") {
-      scrollToSection(sectionId);
-    } else {
-      navigate("/", { state: { scrollTo: sectionId } });
-    }
+  const handleNavClick = (sectionId) => {
+    navigate("/", { state: { scrollTo: sectionId } });
   };
 
   return (
@@ -24,18 +16,17 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-widget">
-            <div className="footer-logo">
-              <Link
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="logo"
-                  width="107"
-                  height="100"
-                />
-              </Link>
+            <div
+              className="footer-logo"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                className="logo"
+                width="107"
+                height="100"
+              />
             </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -56,7 +47,7 @@ const Footer = () => {
                 href="https://www.instagram.com/s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Instagram"
               >
                 <FaInstagram className="social-icon" />
               </a>
@@ -64,7 +55,7 @@ const Footer = () => {
                 href="https://www.threads.com/@s.lackovic"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Threads"
               >
                 <FaThreads className="social-icon" />
               </a>
@@ -76,29 +67,27 @@ const Footer = () => {
               <ul>
                 <li>
                   <MdPlayArrow />
-                  <button onClick={(e) => handleNavClick(e, "about")}>
-                    O mne
-                  </button>
+                  <button onClick={() => handleNavClick("about")}>O mne</button>
                 </li>
                 <li>
                   <MdPlayArrow />
-                  <button onClick={(e) => handleNavClick(e, "pricing")}>
+                  <button onClick={() => handleNavClick("pricing")}>
                     Cenník
                   </button>
                 </li>
                 <li>
                   <MdPlayArrow />
-                  <button onClick={(e) => handleNavClick(e, "feedback")}>
+                  <button onClick={() => handleNavClick("feedback")}>
                     Recenzie
                   </button>
                 </li>
                 <li>
                   <MdPlayArrow />
-                  <button onClick={(e) => handleNavClick(e, "faq")}>Faq</button>
+                  <button onClick={() => handleNavClick("faq")}>Faq</button>
                 </li>
                 <li>
                   <MdPlayArrow />
-                  <button onClick={(e) => handleNavClick(e, "contact")}>
+                  <button onClick={() => handleNavClick("contact")}>
                     Kontakt
                   </button>
                 </li>

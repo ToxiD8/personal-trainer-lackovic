@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import { useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+import ScrollHandler from "./components/ScrollHandler";
 import ScrollToTop from "./components/ScrollToTop";
 import NavBar from "./components/NavBar";
 import Cookies from "./components/Cookies";
@@ -70,7 +71,7 @@ const MainPage = () => {
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollHandler />
       <NavBar />
       <Cookies />
       <Routes>
@@ -78,6 +79,7 @@ function App() {
         <Route path="/cookies" element={<CookiesPage />} />
       </Routes>
       <Footer />
+      <ScrollToTop />
       <Toaster richColors theme="dark" position="bottom-center" />
       <SpeedInsights />
     </BrowserRouter>

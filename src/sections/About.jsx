@@ -17,7 +17,7 @@ const About = () => {
           <div className="about-right animate-right" data-delay="500">
             <h2>O mne</h2>
             <h3>Simona Lackovičová</h3>
-            <h4>Osobná trénerka</h4>
+            <h4>Fitness trénerka</h4>
             <div className="about-right-text">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

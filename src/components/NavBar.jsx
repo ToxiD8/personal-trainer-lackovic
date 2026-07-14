@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { scrollToSection } from "../utils/scrollToSection";
 import logo from "/assets/images/logo/logo.webp";
 
 const navColored = "rgba(0, 0, 0, 0.8)";
@@ -84,25 +83,8 @@ const NavBar = () => {
   }, [togglerExpanded]);
 
   // scrolls to section on nav link click
-  // logo
-  const handleLogoClick = (e, sectionId) => {
-    e.preventDefault();
-    if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      navigate("/", { state: { scrollTo: sectionId } });
-    }
-    setTogglerExpanded(false);
-  };
-
-  // nav links
-  const handleNavClick = (e, sectionId) => {
-    e.preventDefault();
-    if (location.pathname === "/") {
-      scrollToSection(sectionId);
-    } else {
-      navigate("/", { state: { scrollTo: sectionId } });
-    }
+  const handleNavClick = (sectionId) => {
+    navigate("/", { state: { scrollTo: sectionId } });
     setTogglerExpanded(false);
   };
 
@@ -115,7 +97,7 @@ const NavBar = () => {
       className={togglerExpanded ? "menu-open" : ""}
     >
       <Container fluid>
-        <Navbar.Brand onClick={(e) => handleLogoClick(e, "hero")}>
+        <Navbar.Brand onClick={() => handleNavClick("hero")}>
           <img
             src={logo}
             alt="Logo"
@@ -124,25 +106,21 @@ const NavBar = () => {
             height="100"
           />
         </Navbar.Brand>
-
         <Navbar.Toggle
           onClick={() => setTogglerExpanded((prev) => !prev)}
           className="navbar-dark"
         />
-
         <Navbar.Collapse className="justify-content-end">
           <Nav className="ms-auto">
-            <Nav.Link onClick={(e) => handleNavClick(e, "about")}>
-              O mne
-            </Nav.Link>
-            <Nav.Link onClick={(e) => handleNavClick(e, "pricing")}>
+            <Nav.Link onClick={() => handleNavClick("about")}>O mne</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick("pricing")}>
               Cenník
             </Nav.Link>
-            <Nav.Link onClick={(e) => handleNavClick(e, "feedback")}>
+            <Nav.Link onClick={() => handleNavClick("feedback")}>
               Recenzie
             </Nav.Link>
-            <Nav.Link onClick={(e) => handleNavClick(e, "faq")}>FAQ</Nav.Link>
-            <Nav.Link onClick={(e) => handleNavClick(e, "contact")}>
+            <Nav.Link onClick={() => handleNavClick("faq")}>Faq</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick("contact")}>
               Kontakt
             </Nav.Link>
           </Nav>
