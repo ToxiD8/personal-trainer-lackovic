@@ -6,8 +6,21 @@ import {
   FaPaperPlane,
   FaFacebook,
   FaInstagram,
+  FaChevronDown,
 } from "react-icons/fa";
 import { FaThreads, FaLocationDot } from "react-icons/fa6";
+
+const SERVICES = [
+  "1 tréning Standard",
+  "12 tréningov Standard",
+  "1 tréning Delux",
+  "20 tréningov Delux",
+  "Online Coaching",
+  "Jedálniček na mieru",
+  "Konzultácia",
+  "Screening",
+  "Iné",
+];
 
 const Contact = () => {
   const widgetRef = useRef(null);
@@ -15,6 +28,8 @@ const Contact = () => {
 
   const [turnstileToken, setTurnstileToken] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
     // return;
@@ -73,9 +88,10 @@ const Contact = () => {
     const form = e.target;
     const name = form.name.value.trim();
     const email = form.email.value.trim();
+    const service = selectedService;
     const message = form.message.value.trim();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !service || !message) {
       toast.error("Vyplň všetky polia.");
       return;
     }
@@ -96,6 +112,7 @@ const Contact = () => {
         body: JSON.stringify({
           name,
           email,
+          service,
           message,
           turnstileToken,
         }),
@@ -108,6 +125,8 @@ const Contact = () => {
       }
       toast.success("Správa bola úspešne odoslaná.");
       form.reset();
+      setSelectedService("");
+      setIsOpen(false);
       resetTurnstile();
     } catch (error) {
       toast.error(error.message || "Nastala chyba pri odosielaní.");
@@ -144,6 +163,46 @@ const Contact = () => {
                     className="contact-inputs"
                   />
                 </div>
+                <div className="select-wrapper">
+                  <div>
+                    <button
+                      type="button"
+                      className="contact-inputs service-select"
+                      onClick={() => setIsOpen(!isOpen)}
+                      style={{
+                        boxShadow: isOpen
+                          ? "0 0 0 1px var(--sienna) !important"
+                          : "",
+                      }}
+                    >
+                      <span className={selectedService ? "selected" : ""}>
+                        {selectedService || "Typ služby"}
+                      </span>
+                      <FaChevronDown
+                        className="dropdown-icon"
+                        style={{
+                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        }}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="service-dropdown">
+                        {SERVICES.map((service) => (
+                          <div
+                            className="service-option"
+                            key={service}
+                            onClick={() => {
+                              setSelectedService(service);
+                              setIsOpen(false);
+                            }}
+                          >
+                            {service}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <div>
                   <textarea
                     name="message"
@@ -158,6 +217,7 @@ const Contact = () => {
                 type="submit"
                 id="submitContact"
                 name="submitContact"
+                className="contact-submit-btn"
                 disabled={isSubmitting}
               >
                 <span>{isSubmitting ? "Odosielam..." : "Odoslať"}</span>
@@ -202,7 +262,7 @@ const Contact = () => {
                   <div className="address-content">
                     <h3>Adresa</h3>
                     <p>Fabrika Gym</p>
-                    <p>Nitrianská 70</p>
+                    <p>Nitrianska 70</p>
                     <p>958 01 Partizánske</p>
                   </div>
                 </div>

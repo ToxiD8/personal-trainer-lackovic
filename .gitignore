@@ -27,3 +27,4 @@ drafts
 backend/
 .vercel
 .env*
+.env*

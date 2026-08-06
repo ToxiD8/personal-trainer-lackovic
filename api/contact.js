@@ -36,9 +36,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, message, turnstileToken } = req.body;
+    const { name, email, service, message, turnstileToken } = req.body;
 
-    if (!name || !email || !message) {
+    if (!name || !email || !service || !message) {
       return res
         .status(400)
         .json({ success: false, message: "Chýbajú povinné polia." });
@@ -63,11 +63,12 @@ export default async function handler(req, res) {
       to: process.env.GMAIL_USER,
       replyTo: email,
       subject: `Nová správa z formulára od ${name}`,
-      text: `Meno: ${name}\nEmail: ${email}\n\nSpráva:\n${message}`,
+      text: `Meno: ${name}\nEmail: ${email}\nTyp služby: ${service}\n\nSpráva:\n${message}`,
       html: `
         <h2>Nová správa z kontaktného formulára</h2>
         <p><strong>Meno:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Typ služby:</strong> ${escapeHtml(service)}</p>
         <p><strong>Správa:</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
       `,

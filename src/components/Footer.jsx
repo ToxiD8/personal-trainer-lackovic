@@ -28,12 +28,7 @@ const Footer = () => {
                 height="100"
               />
             </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p>Tréning a výživa pre ľudí, ktorí chcú výsledky, nie skratky.</p>
             <div className="footer-socials">
               <a
                 href="https://www.facebook.com/profile.php?id=100004710452990"
@@ -104,7 +99,7 @@ const Footer = () => {
                 <div className="footer-contact-content">
                   <h3>Adresa</h3>
                   <p>Fabrika Gym</p>
-                  <p>Nitrianská 70</p>
+                  <p>Nitrianska 70</p>
                   <p>958 01 Partizánske</p>
                 </div>
               </div>

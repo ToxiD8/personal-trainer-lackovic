@@ -35,17 +35,20 @@ const MainPage = () => {
     );
 
     animated.forEach((el) => {
-      const localObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
-            setTimeout(() => {
-              entry.target.classList.add("visible");
-            }, delay);
-            localObserver.unobserve(entry.target);
-          }
-        });
-      });
+      const localObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, delay);
+              localObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
 
       localObserver.observe(el);
       localObservers.push(localObserver);
@@ -59,7 +62,7 @@ const MainPage = () => {
   return (
     <main>
       <Hero scrollToContact={scrollToContact} />
-      <About />
+      <About scrollToContact={scrollToContact} />
       <Pricing scrollToContact={scrollToContact} />
       <Feedback />
       <Faq />
