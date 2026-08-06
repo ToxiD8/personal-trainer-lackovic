@@ -172,9 +172,9 @@ ul {
 }
 
 .cookies-banner .cookies-banner-content a {
-  color: var(--sienna);
+  color: color-mix(in srgb, var(--sienna), white 10%);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cookies-banner .cookies-buttons {
