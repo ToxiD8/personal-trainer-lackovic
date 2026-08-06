@@ -4,16 +4,19 @@ import Container from "react-bootstrap/Container";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import logo from "/assets/images/logo/logo.webp";
+import useClickOutside from "../utils/useClickOutside";
 
 const navColored = "rgba(0, 0, 0, 0.8)";
 const navBlur = "blur(12px)";
 
 const NavBar = () => {
-  const [togglerExpanded, setTogglerExpanded] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
   const navbarRef = useRef(null);
   const prevScrollY = useRef(0);
+
+  const [togglerExpanded, setTogglerExpanded] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // sets navbar background on page load and when toggler is expanded
   useEffect(() => {
@@ -68,25 +71,14 @@ const NavBar = () => {
     };
   }, [location, togglerExpanded]);
 
-  // close mobile navbar when clicking outside
-  useEffect(() => {
-    if (!togglerExpanded) return;
-
-    const handleClickOutside = (e) => {
-      if (navbarRef.current && !navbarRef.current.contains(e.target)) {
-        setTogglerExpanded(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [togglerExpanded]);
-
   // scrolls to section on nav link click
   const handleNavClick = (sectionId) => {
     navigate("/", { state: { scrollTo: sectionId } });
     setTogglerExpanded(false);
   };
+
+  // close mobile navbar when clicking outside
+  useClickOutside(navbarRef, togglerExpanded, () => setTogglerExpanded(false));
 
   return (
     <Navbar

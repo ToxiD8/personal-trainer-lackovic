@@ -119,7 +119,7 @@ const About = ({ scrollToContact }) => {
               </div>
               <div className="about-education-item">
                 <FaCertificate className="about-education-icon" />
-                <span>MBA – Marketing &amp; PR</span>
+                <span>MBA - Marketing &amp; PR</span>
               </div>
               <div className="about-education-item">
                 <FaMedal className="about-education-icon" />

@@ -490,7 +490,7 @@ ul {
 
 .visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: none;
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
@@ -1469,6 +1469,7 @@ ul {
 }
 
 .contact-row {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1551,10 +1552,6 @@ ul {
     color 0.22s ease;
 }
 
-.select-wrapper:hover .dropdown-icon {
-  color: var(--sienna);
-}
-
 .service-dropdown {
   position: absolute;
   top: calc(100% + 1px);
@@ -1579,6 +1576,12 @@ ul {
   min-height: 210px;
   padding-top: 15px;
   resize: vertical;
+}
+
+.cf-turnstile {
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
 }
 
 .contact-submit-btn {
@@ -1913,6 +1916,10 @@ ul {
     --bs-accordion-btn-color: var(--sienna);
   }
 
+  .select-wrapper:hover .dropdown-icon {
+    color: var(--sienna);
+  }
+
   .service-option:hover {
     background-color: var(--sienna);
     color: #fff;
@@ -1943,10 +1950,6 @@ ul {
     transition: all 0.6s ease;
     color: var(--sienna);
   }
-}
-
-#cf-chl-widget-vr1ye-fr {
-  display: none !important;
 }
 
 /* Responsive design */

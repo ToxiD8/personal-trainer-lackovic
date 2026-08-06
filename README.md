@@ -1,8 +1,6 @@
-# Simona Lackovičová – Personal Trainer
+# Simona Lackovičová - Personal Trainer
 
-A presentation website for a fitness trainer. The site provides visitors with all the necessary information – from the trainer's bio, service and coaching pricing, client reviews and FAQ section, to a contact form with direct contact details.
-
-> Project is currently under development. All assets such as images and text content are used for testing purposes only.
+A presentation website for a fitness trainer. The site provides visitors with all the necessary information - from the trainer's bio, service and coaching pricing, client reviews and FAQ section, to a contact form with direct contact details.
 
 > Live site: [simonalackovic.sk](https://simonalackovic.sk)
 

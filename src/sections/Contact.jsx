@@ -9,6 +9,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { FaThreads, FaLocationDot } from "react-icons/fa6";
+import useClickOutside from "../utils/useClickOutside";
 
 const SERVICES = [
   "1 tréning Standard",
@@ -25,6 +26,7 @@ const SERVICES = [
 const Contact = () => {
   const widgetRef = useRef(null);
   const widgetIdRef = useRef(null);
+  const serviceRef = useRef(null);
 
   const [turnstileToken, setTurnstileToken] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,6 +47,7 @@ const Contact = () => {
       widgetIdRef.current = window.turnstile.render(widgetRef.current, {
         sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
         theme: "dark",
+        size: "flexible",
         callback: (token) => {
           setTurnstileToken(token);
         },
@@ -136,6 +139,9 @@ const Contact = () => {
     }
   };
 
+  // close service dropdown when clicking outside
+  useClickOutside(serviceRef, isOpen, () => setIsOpen(false));
+
   return (
     <section id="contact">
       <div className="contact-container">
@@ -168,6 +174,7 @@ const Contact = () => {
                     <button
                       type="button"
                       className="contact-inputs service-select"
+                      ref={serviceRef}
                       onClick={() => setIsOpen(!isOpen)}
                       style={{
                         boxShadow: isOpen
