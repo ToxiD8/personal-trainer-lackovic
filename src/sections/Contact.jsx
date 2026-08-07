@@ -16,7 +16,7 @@ const SERVICES = [
   "12 tréningov Standard",
   "1 tréning Delux",
   "20 tréningov Delux",
-  "Online Coaching",
+  "Online koučing",
   "Jedálniček na mieru",
   "Konzultácia",
   "Screening",

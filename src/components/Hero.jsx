@@ -37,7 +37,6 @@ const Hero = ({ scrollToContact }) => {
     <section id="hero">
       <div className="hero-bg" ref={bgRef}>
         <HeroMedia
-          posterSrcDesktop="/assets/images/hero/hero-bg.webp"
           videoSources={[
             {
               src: "https://pub-c8df2b2d494f484cb84ac4394114164f.r2.dev/hero.webm",

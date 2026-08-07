@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import ScrollHandler from "./components/ScrollHandler";
@@ -11,7 +11,7 @@ import CookiesPage from "./pages/CookiesPage";
 import Hero from "./components/Hero";
 import About from "./sections/About";
 import Pricing from "./sections/Pricing";
-import Feedback from "./sections/Feedback";
+const FeedbackSection = lazy(() => import("./sections/Feedback"));
 import Faq from "./sections/Faq";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
@@ -64,7 +64,9 @@ const MainPage = () => {
       <Hero scrollToContact={scrollToContact} />
       <About scrollToContact={scrollToContact} />
       <Pricing scrollToContact={scrollToContact} />
-      <Feedback />
+      <Suspense fallback={<div style={{ minHeight: "739px" }} />}>
+        <FeedbackSection />
+      </Suspense>
       <Faq />
       <Contact />
     </main>

@@ -224,7 +224,7 @@ const Pricing = ({ scrollToContact }) => {
           </div>
           <div className="extra-grid">
             <div className="extra-item animate-bottom" data-delay="400">
-              <h4>Online Coaching</h4>
+              <h4>Online koučing</h4>
               <ul>
                 <li>
                   <FaCheckCircle className="features-icon" /> Vstupná
