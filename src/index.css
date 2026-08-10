@@ -1167,6 +1167,12 @@ ul {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
+.pricing-extra .extra-item:focus {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--sienna) 50%, white);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
 .pricing-extra .extra-item h4 {
   font-size: 17px;
   font-weight: 700;
@@ -1402,6 +1408,7 @@ ul {
 .accordion-header button {
   font-size: 17px;
   cursor: pointer;
+  gap: 10px;
 }
 
 .accordion-button {
@@ -1569,7 +1576,7 @@ ul {
 
 .cf-turnstile {
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   overflow: hidden;
 }
 
@@ -1890,7 +1897,7 @@ ul {
   }
 
   .pricing-extra .extra-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
     border-color: color-mix(in srgb, var(--sienna) 50%, white);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
   }
@@ -2060,7 +2067,7 @@ ul {
     margin-bottom: 1rem;
   }
   .pricing-container .extra-grid {
-    gap: 20px;
+    gap: 25px;
   }
 }
 

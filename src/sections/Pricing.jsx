@@ -223,7 +223,11 @@ const Pricing = ({ scrollToContact }) => {
             <h3>Extra služby</h3>
           </div>
           <div className="extra-grid">
-            <div className="extra-item animate-bottom" data-delay="400">
+            <div
+              className="extra-item animate-bottom"
+              data-delay="400"
+              tabIndex="0"
+            >
               <h4>Online koučing</h4>
               <ul>
                 <li>
@@ -253,7 +257,11 @@ const Pricing = ({ scrollToContact }) => {
                 <span>mesiac</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="500">
+            <div
+              className="extra-item animate-bottom"
+              data-delay="500"
+              tabIndex="0"
+            >
               <h4>Jedálniček na mieru</h4>
               <ul>
                 <li>
@@ -283,7 +291,11 @@ const Pricing = ({ scrollToContact }) => {
                 <span>mesiac</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="400">
+            <div
+              className="extra-item animate-bottom"
+              data-delay="400"
+              tabIndex="0"
+            >
               <h4>Konzultácia</h4>
               <ul>
                 <li>
@@ -298,7 +310,11 @@ const Pricing = ({ scrollToContact }) => {
                 <span>jednorázovo</span>
               </span>
             </div>
-            <div className="extra-item animate-bottom" data-delay="500">
+            <div
+              className="extra-item animate-bottom"
+              data-delay="500"
+              tabIndex="0"
+            >
               <h4>Screening</h4>
               <ul>
                 <li>
