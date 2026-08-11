@@ -1574,7 +1574,7 @@ ul {
   resize: vertical;
 }
 
-.cf-turnstile {
+.turnstile-widget {
   width: 100%;
   max-width: 320px;
   overflow: hidden;

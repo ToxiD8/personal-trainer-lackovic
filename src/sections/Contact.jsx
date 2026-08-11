@@ -219,7 +219,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
               </div>
-              <div className="cf-turnstile" ref={widgetRef}></div>
+              <div className="turnstile-widget" ref={widgetRef}></div>
               <button
                 type="submit"
                 id="submitContact"

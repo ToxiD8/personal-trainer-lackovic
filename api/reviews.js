@@ -12,6 +12,8 @@ export default async function handler(req, res) {
       .json({ success: false, message: "Method not allowed" });
   }
 
+  res.setHeader("Cache-Control", "s-maxage=86400, stale-while-revalidate=3600");
+
   const now = Date.now();
   const isCacheValid = cache.data && now - cache.timestamp < CACHE_TTL_MS;
 
