@@ -59,7 +59,6 @@ const Cookies = () => {
     acceptAll();
     loadGoogleAnalytics();
     closeBanner();
-    alert(document.cookie);
   };
 
   const handleDeclineAll = () => {
