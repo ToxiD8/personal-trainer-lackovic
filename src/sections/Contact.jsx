@@ -219,7 +219,11 @@ const Contact = () => {
                   ></textarea>
                 </div>
               </div>
-              <div className="turnstile-widget" ref={widgetRef}></div>
+              <div
+                className="turnstile-widget"
+                ref={widgetRef}
+                data-language="sk"
+              ></div>
               <button
                 type="submit"
                 id="submitContact"

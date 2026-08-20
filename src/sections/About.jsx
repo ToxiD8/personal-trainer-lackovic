@@ -65,7 +65,7 @@ const About = ({ scrollToContact }) => {
           </div>
           <div className="about-right animate-right" data-delay="500">
             <h2>O mne</h2>
-            <h3>Ahoj, volám sa Simona</h3>
+            <h3>Ahoj, volám sa Simona.</h3>
             <div className="about-right-text">
               <p>
                 Pomáham ľuďom budovať telo, na ktoré môžu byť hrdí. Ešte viac ma

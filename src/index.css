@@ -55,7 +55,7 @@
 :root {
   --innuendo: #ab2e56;
   --sienna: #953e20; /* #c15a3b #e97451 */
-  --black: #0a0a0a;
+  --black-bg: #0a0a0a;
   --gray: #505050;
   --bg-pattern: url("/assets/images/bg-pattern.svg");
 }
@@ -93,6 +93,12 @@ ul {
   margin-bottom: 0;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -116,7 +122,7 @@ ul {
   font-weight: 700;
 }
 
-/* Cookies */
+/* Cookies banner */
 
 .cookies-banner {
   position: fixed;
@@ -124,7 +130,7 @@ ul {
   left: 30px;
   max-width: 480px;
   width: 100%;
-  background: var(--black);
+  background: var(--black-bg);
   padding: 25px;
   box-shadow: 0 0 10px var(--sienna);
   z-index: 9999;
@@ -196,11 +202,9 @@ ul {
   cursor: pointer;
   width: 36%;
   min-width: 90px;
-  transition: all 0.22s ease;
+  transition: all 0.3s ease;
   max-height: 39px;
 }
-
-/* Settings */
 
 .cookies-settings-content {
   display: flex;
@@ -228,8 +232,6 @@ ul {
   margin-top: 8px;
   line-height: 1.5;
 }
-
-/* Toggle */
 
 .cookies-toggle {
   flex-shrink: 0;
@@ -269,59 +271,233 @@ ul {
 .cookies-toggle--locked .cookies-toggle-thumb {
   transform: translateX(20px);
 }
-/* Cookies sub-page */
 
-#cookies-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 7rem 0 2rem;
-  background-color: #f8f8f8;
+/* Privacy policy sub-page */
+
+.privacy-policy {
+  width: 100%;
+  padding: 10rem 1.5rem 5rem;
+  background: #f8f8f8;
+  color: #000;
 }
 
-.cookies-container {
-  width: min(1140px, 90%);
-  margin: 2rem;
-}
-
-.cookies-container h1 {
-  font-size: 20px;
+.privacy-policy a {
   color: var(--sienna);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  text-decoration: none;
 }
 
-.cookies-content h2 {
+.privacy-policy__container {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.privacy-policy__header {
+  margin-bottom: 70px;
+}
+
+.privacy-policy__eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--sienna);
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #111;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.cookies-content p {
-  font-size: 15px;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+.privacy-policy h1 {
+  margin-bottom: 0.7rem;
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.privacy-policy__subtitle {
+  font-weight: 500;
+}
+
+.privacy-policy__intro {
+  max-width: 800px;
+}
+
+.privacy-policy__date {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 10px 15px;
+  border-left: 3px solid var(--sienna);
+  background: #efedea;
   color: var(--gray);
-  text-align: justify;
+  font-size: 14px;
 }
 
-.cookies-content p a {
-  color: var(--sienna);
-  text-decoration: none;
+.privacy-policy__content {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
 }
 
-.cookies-content button {
-  background: none;
-  border: none;
-  text-decoration: none;
-  color: var(--sienna);
-  font-weight: 600;
+.privacy-policy h2 {
+  margin: 0 0 22px;
+  color: #000;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.privacy-policy p {
+  margin: 0 0 17px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.privacy-policy p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-policy strong {
+  color: #000;
+  font-weight: 700;
+}
+
+.privacy-policy ul {
+  margin: 18px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.privacy-policy li {
+  position: relative;
+  margin-bottom: 11px;
+  padding-left: 23px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.privacy-policy li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sienna);
+  transform: translateY(-50%);
+}
+
+.privacy-policy__contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 24px 0;
+  padding: 25px 28px;
+  border: 1px solid #e1ded9;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+  color: var(--gray);
   font-size: 15px;
-  cursor: pointer;
+  line-height: 1.4;
+}
+
+.privacy-policy__contact-card strong {
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+.privacy-policy__contact-card a {
+  color: var(--sienna);
+  text-decoration: none;
+}
+
+.privacy-policy__contact-divider {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0;
+  background: #e8e5e1;
+}
+
+.privacy-policy__contact-card--compact {
+  max-width: 520px;
+}
+
+.privacy-policy__content a {
+  color: var(--sienna);
+  text-decoration: none;
+}
+
+.privacy-policy__back {
+  display: inline-block;
+  font-weight: 700;
+}
+
+/* Cookies sub-page */
+
+.cookies-page {
+  width: 100%;
+  padding: 10rem 1.5rem 5rem;
+  background: #f8f8f8;
+  color: #000;
+}
+
+.cookies-page__container {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.cookies-page__header {
+  margin-bottom: 70px;
+}
+
+.cookies-page__eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--sienna);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.cookies-page h1 {
+  margin-bottom: 0.7rem;
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.cookies-page__intro {
+  max-width: 800px;
+}
+
+.cookies-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.cookies-page h2 {
+  margin: 0 0 22px;
+  color: #000;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.cookies-page p {
+  margin: 0 0 17px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cookies-page p:last-child {
+  margin-bottom: 0;
+}
+
+.cookies-page strong {
+  color: #000;
+  font-weight: 700;
 }
 
 .cookies-table {
@@ -333,9 +509,9 @@ ul {
 
 .cookies-table th,
 .cookies-table td {
-  padding: 0.75rem 0.4rem;
+  padding: 0.75rem 0.6rem;
   text-align: left;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e1ded9;
 }
 
 .cookies-table thead tr {
@@ -343,8 +519,14 @@ ul {
   color: #fff;
 }
 
-.cookies-table code {
-  padding: 0.15rem 0.4rem;
+.cookies-page a {
+  color: var(--sienna);
+  text-decoration: none;
+}
+
+.cookies-page__back {
+  display: inline-block;
+  font-weight: 700;
 }
 
 /* Scroll to top button */
@@ -442,9 +624,8 @@ ul {
 
 .navbar-nav .nav-link {
   position: relative;
-  color: #fff !important;
+  color: #fff;
   text-transform: uppercase;
-  transition: 0.5s;
   font-weight: 600;
   letter-spacing: 5px;
   font-size: 13px;
@@ -463,7 +644,7 @@ ul {
   bottom: 5px;
   left: 0;
   background-color: var(--sienna);
-  transition: width 0.4s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link.active::after {
@@ -503,7 +684,7 @@ ul {
   height: 100svh;
   max-height: 900px;
   overflow: hidden;
-  background-color: var(--black);
+  background-color: var(--black-bg);
 }
 
 #hero::before {
@@ -606,8 +787,8 @@ ul {
   padding: 15px 34px;
   border: 1.5px solid var(--sienna);
   transition:
-    background 0.22s ease,
-    color 0.22s ease;
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .hero-cta-primary:active {
@@ -750,7 +931,7 @@ ul {
 .about-details {
   position: relative;
   z-index: 2;
-  background-color: var(--black);
+  background-color: var(--black-bg);
   color: #fff;
   padding: 5rem 2rem 6rem;
   background-image: url("/assets/images/about/about-details.webp");
@@ -853,7 +1034,7 @@ ul {
   margin-top: 1rem;
   background-color: var(--sienna);
   color: #fff;
-  transition: all 0.22s ease;
+  transition: all 0.3s ease;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1068,8 +1249,8 @@ ul {
   text-decoration: none;
   border: 1.5px solid var(--sienna);
   transition:
-    background 0.22s ease,
-    color 0.22s ease;
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .pricing-container .box .button button:active,
@@ -1342,7 +1523,7 @@ ul {
 
 .swiper-pagination-bullet-active {
   background-color: var(--sienna);
-  transition: opacity 0.6s;
+  transition: opacity 0.3s;
   transform: scale(1.7);
 }
 
@@ -1351,7 +1532,7 @@ ul {
   outline: none;
   --swiper-navigation-size: 44px;
   opacity: 0.5;
-  transition: opacity 0.6s;
+  transition: opacity 0.3s;
 }
 
 .swiper-button-prev::after,
@@ -1366,7 +1547,7 @@ ul {
   width: min(80px, 90%);
   color: #fff;
   opacity: 0.5;
-  transition: all 0.22s ease;
+  transition: all 0.3s ease;
 }
 
 /* Accordion */
@@ -1544,8 +1725,8 @@ ul {
   width: 18px;
   height: 18px;
   transition:
-    transform 0.22s ease,
-    color 0.22s ease;
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .service-dropdown {
@@ -1553,7 +1734,7 @@ ul {
   top: calc(100% + 1px);
   left: 0;
   width: 100%;
-  background: var(--black);
+  background: var(--black-bg);
   overflow: hidden;
   z-index: 100;
 }
@@ -1564,8 +1745,8 @@ ul {
   padding: 8px;
   cursor: pointer;
   transition:
-    background-color 0.22s ease,
-    color 0.22s ease;
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-input-container textarea {
@@ -1600,7 +1781,7 @@ ul {
 .contact-submit-btn span,
 .contact-submit-btn svg {
   display: inline-block;
-  transition: all 0.6s;
+  transition: all 0.3s ease;
   margin-left: 10px;
 }
 
@@ -1673,7 +1854,7 @@ ul {
   background-color: #fff;
   margin: 0 2px;
   border-radius: 50%;
-  transition: all 0.6s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-details-content .socials a:active {
@@ -1683,7 +1864,7 @@ ul {
 .contact-details-content .socials a svg {
   font-size: 1.5em;
   color: #000;
-  transition: all 0.6s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-map {
@@ -1714,8 +1895,8 @@ ul {
   z-index: 1;
   /* background: linear-gradient(
     135deg,
-    var(--black) 0%,
-    var(--black) 70%,
+    var(--black-bg) 0%,
+    var(--black-bg) 70%,
     var(--sienna) 120%
   ); */
 }
@@ -1773,6 +1954,7 @@ ul {
   font-size: 1.5em;
   margin-right: 10px;
   color: #fff;
+  transition: all 0.3s ease;
 }
 
 .footer-nav ul {
@@ -1793,7 +1975,7 @@ ul {
   font-size: 15px;
   margin: 10px;
   text-decoration: none;
-  transition: all 0.6s ease;
+  transition: all 0.3s ease;
   background: none;
   border: none;
   cursor: pointer;
@@ -1844,10 +2026,29 @@ ul {
 
 .footer-bottom {
   border-top: 1px solid var(--gray);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 20px 0;
   max-width: 1250px;
   margin: 0 2rem;
+}
+
+.footer-bottom-right ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.footer-bottom-right .footer-bottom-link {
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .footer-bottom p {
@@ -1863,13 +2064,14 @@ ul {
     background-color: #fff;
   }
 
+  .cookies-page a:hover,
+  .privacy-policy a:hover {
+    text-decoration: underline;
+  }
+
   .scroll-to-top:hover {
     background-color: #333;
     color: var(--sienna);
-  }
-
-  .nav-link:hover {
-    color: #fff;
   }
 
   .navbar-nav .nav-link:hover::after {
@@ -1883,7 +2085,7 @@ ul {
 
   .about-cta:hover {
     background-color: #fff;
-    color: var(--black);
+    color: #000;
   }
 
   .pricing-container .box .button button:hover {
@@ -1929,21 +2131,21 @@ ul {
 
   .contact-details-content .socials a:hover {
     background-color: var(--sienna);
-    transition: all 0.6s ease;
   }
 
   .contact-details-content .socials a:hover svg {
     color: #fff;
-    transition: all 0.6s ease;
   }
 
   .footer-socials a:hover svg {
     color: var(--sienna);
-    transition: all 0.6s ease;
   }
 
   .footer-nav ul li button:hover {
-    transition: all 0.6s ease;
+    color: var(--sienna);
+  }
+
+  .footer-bottom-right ul a:hover {
     color: var(--sienna);
   }
 }
@@ -2072,9 +2274,69 @@ ul {
 }
 
 @media (max-width: 767px) {
+  .privacy-policy__header {
+    margin-bottom: 50px;
+  }
+  .privacy-policy h1 {
+    font-size: 38px;
+  }
+  .privacy-policy__subtitle {
+    font-size: 16px;
+  }
+  .privacy-policy__intro {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .privacy-policy__content {
+    gap: 42px;
+  }
+  .privacy-policy h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .privacy-policy p,
+  .privacy-policy li {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .privacy-policy__contact-card {
+    padding: 20px;
+  }
+  .cookies-page__header {
+    margin-bottom: 50px;
+  }
+  .cookies-page h1 {
+    font-size: 38px;
+  }
+  .cookies-page p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .cookies-page h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .cookies-table {
+    font-size: 14px;
+  }
+  .cookies-table th,
+  .cookies-table td {
+    padding: 11px 10px;
+  }
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+  }
+}
+
+@media (max-width: 726px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-bottom-right ul {
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
@@ -2144,14 +2406,14 @@ ul {
   }
   .cookies-table tbody tr {
     display: block;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e1ded9;
     margin-bottom: 1rem;
     overflow: hidden;
   }
   .cookies-table tbody td {
     display: block;
     border: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e1ded9;
     padding: 0.5rem 1rem;
   }
   .cookies-table tbody td:last-child {
@@ -2164,9 +2426,6 @@ ul {
     color: var(--sienna);
     margin-bottom: 0.2rem;
     text-transform: uppercase;
-  }
-  .cookies-table code {
-    padding: 0;
   }
   .contact-right {
     max-width: 90%;
@@ -2183,6 +2442,42 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .privacy-policy {
+    padding-top: 8rem;
+  }
+  .privacy-policy h1 {
+    font-size: 33px;
+  }
+  .privacy-policy__eyebrow {
+    font-size: 14px;
+  }
+  .privacy-policy__date {
+    font-size: 14px;
+  }
+  .privacy-policy__content {
+    gap: 38px;
+  }
+  .privacy-policy h2 {
+    font-size: 21px;
+  }
+  .privacy-policy__contact-card {
+    padding: 18px;
+  }
+  .cookies-page {
+    padding-top: 8rem;
+  }
+  .cookies-page__eyebrow {
+    font-size: 12px;
+  }
+  .cookies-page h1 {
+    font-size: 33px;
+  }
+  .cookies-page__content {
+    gap: 38px;
+  }
+  .cookies-page h2 {
+    font-size: 21px;
+  }
   .feedback-inner h1 {
     margin-bottom: 1.5rem;
   }
@@ -2244,5 +2539,11 @@ ul {
   .pricing-container .box .button button {
     min-width: auto;
     width: 100%;
+  }
+  .footer-bottom {
+    gap: 25px;
+  }
+  .footer-bottom-right ul {
+    gap: 1rem;
   }
 }

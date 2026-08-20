@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaAt } from "react-icons/fa";
 import { FaThreads, FaLocationDot } from "react-icons/fa6";
 import { MdPlayArrow } from "react-icons/md";
@@ -125,7 +125,26 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 Simona Lackovičová | Všetky práva vyhradené</p>
+          <div className="footer-bottom-left">
+            <p>© 2026 Simona Lackovičová | Všetky práva vyhradené</p>
+          </div>
+          <div className="footer-bottom-right">
+            <ul>
+              <li>
+                <a
+                  href="/ochrana-osobnych-udajov"
+                  className="footer-bottom-link"
+                >
+                  Zásady ochrany súkromia
+                </a>
+              </li>
+              <li>
+                <a href="/cookies" className="footer-bottom-link">
+                  Cookies
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,7 +7,8 @@ import ScrollHandler from "./components/ScrollHandler";
 import ScrollToTop from "./components/ScrollToTop";
 import NavBar from "./components/NavBar";
 import Cookies from "./components/Cookies";
-import CookiesPage from "./pages/CookiesPage";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Hero from "./components/Hero";
 import About from "./sections/About";
 import Pricing from "./sections/Pricing";
@@ -79,7 +80,8 @@ function App() {
       <Cookies />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/cookies" element={<CookiesPage />} />
+        <Route path="/ochrana-osobnych-udajov" element={<PrivacyPolicy />} />
+        <Route path="/cookies" element={<CookiesPolicy />} />
       </Routes>
       <Footer />
       <ScrollToTop />

@@ -28,7 +28,10 @@ const NavBar = () => {
     } else {
       const timeout = setTimeout(() => {
         const scrollY = window.scrollY;
-        if (location.pathname === "/cookies") {
+        if (
+          location.pathname === "/cookies" ||
+          location.pathname === "/ochrana-osobnych-udajov"
+        ) {
           navbarBg.style.background = navColored;
           navbarBg.style.backdropFilter = navBlur;
         } else {

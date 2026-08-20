@@ -67,6 +67,7 @@ const Feedback = () => {
                       alt={feedback.name}
                       width="160"
                       height="160"
+                      referrerPolicy="no-referrer"
                     />
                     <Stars rating={feedback.rating} />
                     {feedback.text && <q>{feedback.text}</q>}
