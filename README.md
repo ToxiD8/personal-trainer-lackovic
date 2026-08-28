@@ -6,8 +6,11 @@ A presentation website for a fitness trainer. The site provides visitors with al
 
 ## Technologies
 
-- HTML, CSS, JavaScript
-- React.js, Bootstrap, Node.js
+**Frontend:** React, Vite, React Router, Bootstrap, Swiper, CSS/SCSS
+
+**Backend:** Node.js, Nodemailer
+
+**Other:** Cloudflare Turnstile, Google Reviews API integration
 
 ## Running the project
 

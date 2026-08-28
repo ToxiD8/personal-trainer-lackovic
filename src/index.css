@@ -320,16 +320,6 @@ ul {
   max-width: 800px;
 }
 
-.privacy-policy__date {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 10px 15px;
-  border-left: 3px solid var(--sienna);
-  background: #efedea;
-  color: var(--gray);
-  font-size: 14px;
-}
-
 .privacy-policy__content {
   display: flex;
   flex-direction: column;
@@ -1522,7 +1512,7 @@ ul {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--sienna);
+  background-color: #fff;
   transition: opacity 0.3s;
   transform: scale(1.7);
 }
@@ -2449,9 +2439,6 @@ ul {
     font-size: 33px;
   }
   .privacy-policy__eyebrow {
-    font-size: 14px;
-  }
-  .privacy-policy__date {
     font-size: 14px;
   }
   .privacy-policy__content {
