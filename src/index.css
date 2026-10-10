@@ -2184,6 +2184,7 @@ ul {
 
 @media (max-width: 991px) {
   .about-details,
+  .about-intro,
   #feedback,
   #contact,
   #footer {
@@ -2498,6 +2499,9 @@ ul {
   }
   .cookies-buttons .cookies-button {
     width: 100%;
+  }
+  #hero {
+    height: auto;
   }
   /* .hero-title {
     font-size: 82px;
